@@ -23,6 +23,26 @@ namespace PotionBook
         public MainWindow()
         {
             InitializeComponent();
+            FrameMain.Navigate(new Pages.LoginPage());
+        }
+
+        private void FrameMain_ContentRendered(object sender, EventArgs e)
+        {
+            if (FrameMain.Content != frameContent)
+            {
+                if (App.CurrentUser != null)
+                {
+                    UserName.Text = App.CurrentUser.Surname + " " + App.CurrentUser.Name;
+                }
+                else
+                {
+                    UserName.Text = "Гость";
+                }
+            }
+            else
+            {
+                UserName.Text = String.Empty;
+            }
         }
     }
 }

@@ -13,5 +13,7 @@ namespace PotionBook
     /// </summary>
     public partial class App : Application
     {
+        public static Entities.BaseEntities Context { get; } = new MaterialEntities();
+        public static Entities.User CurrentUser = null;
     }
 }
