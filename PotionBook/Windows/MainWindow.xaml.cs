@@ -20,6 +20,7 @@ namespace PotionBook
     /// </summary>
     public partial class MainWindow : Window
     {
+        object frameContent = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,10 +34,6 @@ namespace PotionBook
                 if (App.CurrentUser != null)
                 {
                     UserName.Text = App.CurrentUser.Surname + " " + App.CurrentUser.Name;
-                }
-                else
-                {
-                    UserName.Text = "Гость";
                 }
             }
             else

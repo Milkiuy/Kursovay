@@ -24,5 +24,20 @@ namespace PotionBook.Pages
         {
             InitializeComponent();
         }
+
+        private void LoginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var currentUser = App.Context.Users
+                .FirstOrDefault(p => p.Login == TxtLogin.Text && p.Password == TxtPassword.Password);
+            if (currentUser != null)
+            {
+                App.CurrentUser = currentUser;
+                NavigationService.Navigate(new NavigatePage());
+            }
+            else
+            {
+                MessageBox.Show("Пользователь не найден", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }

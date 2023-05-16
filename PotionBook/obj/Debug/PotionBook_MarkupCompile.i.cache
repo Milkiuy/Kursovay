@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\10200296\source\repos\PotionBook\PotionBook\App.xaml
-2194217248
+3-480708386
 21929009593
-13-1656915737
+16-1843972915
 18685062103
-Pages\LoginPage.xaml;Windows\MainWindow.xaml;
+Pages\LoginPage.xaml;Pages\NavigatePage.xaml;Windows\MainWindow.xaml;
 
 False
 

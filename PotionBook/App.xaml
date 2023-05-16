@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PotionBook"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Windows/MainWindow.xaml">
     <Application.Resources>
         <SolidColorBrush x:Key="ColorAccent" Color="#AF3BD4"/>
         <SolidColorBrush x:Key="ColorSecondary" Color="#502982"/>

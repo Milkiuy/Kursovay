@@ -4,10 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d973b07786f94596a5173b5ea0b00809" Name="Diagram1">
-        <EntityTypeShape EntityType="BaseModel.Role" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="fb6866c5f2fc4cffa34f8711e1d7b5ea" Name="Diagram1">
+        <EntityTypeShape EntityType="BaseModel.Ingredient" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseModel.Potion" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseModel.Role" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseModel.User" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="BaseModel.FK_Potion_Ingredient" ManuallyRouted="false" />
+        <AssociationConnector Association="BaseModel.FK_Potion_Ingredient1" ManuallyRouted="false" />
+        <AssociationConnector Association="BaseModel.FK_Potion_Ingredient2" ManuallyRouted="false" />
+        <AssociationConnector Association="BaseModel.FK_Potion_Ingredient3" ManuallyRouted="false" />
         <AssociationConnector Association="BaseModel.FK_Users_Roles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

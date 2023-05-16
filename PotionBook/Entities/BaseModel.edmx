@@ -5,6 +5,25 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Хранилище BaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Potion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IngredientOne" Type="int" Nullable="false" />
+          <Property Name="IngredientTwo" Type="int" />
+          <Property Name="IngredientThr" Type="int" />
+          <Property Name="IngredientFour" Type="int" />
+        </EntityType>
         <EntityType Name="Roles">
           <Key>
             <PropertyRef Name="id" />
@@ -34,6 +53,54 @@
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RoleID" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Potion_Ingredient">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Potion">
+              <PropertyRef Name="IngredientOne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potion_Ingredient1">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
+          <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Potion">
+              <PropertyRef Name="IngredientTwo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potion_Ingredient2">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
+          <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Potion">
+              <PropertyRef Name="IngredientFour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potion_Ingredient3">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
+          <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Potion">
+              <PropertyRef Name="IngredientThr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Users_Roles">
           <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -47,9 +114,27 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище BaseModelContainer">
+          <EntitySet Name="Ingredient" EntityType="Self.Ingredient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Potion" EntityType="Self.Potion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Potion_Ingredient" Association="Self.FK_Potion_Ingredient">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="Potion" EntitySet="Potion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potion_Ingredient1" Association="Self.FK_Potion_Ingredient1">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="Potion" EntitySet="Potion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potion_Ingredient2" Association="Self.FK_Potion_Ingredient2">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="Potion" EntitySet="Potion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potion_Ingredient3" Association="Self.FK_Potion_Ingredient3">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="Potion" EntitySet="Potion" />
+          </AssociationSet>
           <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
@@ -60,6 +145,33 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Potions" Relationship="Self.FK_Potion_Ingredient" FromRole="Ingredient" ToRole="Potion" />
+          <NavigationProperty Name="Potions1" Relationship="Self.FK_Potion_Ingredient1" FromRole="Ingredient" ToRole="Potion" />
+          <NavigationProperty Name="Potions2" Relationship="Self.FK_Potion_Ingredient2" FromRole="Ingredient" ToRole="Potion" />
+          <NavigationProperty Name="Potions3" Relationship="Self.FK_Potion_Ingredient3" FromRole="Ingredient" ToRole="Potion" />
+        </EntityType>
+        <EntityType Name="Potion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IngredientOne" Type="Int32" Nullable="false" />
+          <Property Name="IngredientTwo" Type="Int32" />
+          <Property Name="IngredientThr" Type="Int32" />
+          <Property Name="IngredientFour" Type="Int32" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK_Potion_Ingredient" FromRole="Potion" ToRole="Ingredient" />
+          <NavigationProperty Name="Ingredient1" Relationship="Self.FK_Potion_Ingredient1" FromRole="Potion" ToRole="Ingredient" />
+          <NavigationProperty Name="Ingredient2" Relationship="Self.FK_Potion_Ingredient2" FromRole="Potion" ToRole="Ingredient" />
+          <NavigationProperty Name="Ingredient3" Relationship="Self.FK_Potion_Ingredient3" FromRole="Potion" ToRole="Ingredient" />
+        </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="id" />
@@ -91,6 +203,54 @@
           <Property Name="RoleID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Role" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
         </EntityType>
+        <Association Name="FK_Potion_Ingredient">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Potion">
+              <PropertyRef Name="IngredientOne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potion_Ingredient1">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
+          <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Potion">
+              <PropertyRef Name="IngredientTwo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potion_Ingredient2">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
+          <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Potion">
+              <PropertyRef Name="IngredientFour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potion_Ingredient3">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
+          <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Potion">
+              <PropertyRef Name="IngredientThr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Users_Roles">
           <End Role="Roles" Type="Self.Role" Multiplicity="1" />
           <End Role="Users" Type="Self.User" Multiplicity="*" />
@@ -104,9 +264,27 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
+          <EntitySet Name="Potions" EntityType="Self.Potion" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Potion_Ingredient" Association="Self.FK_Potion_Ingredient">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="Potion" EntitySet="Potions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potion_Ingredient1" Association="Self.FK_Potion_Ingredient1">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="Potion" EntitySet="Potions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potion_Ingredient2" Association="Self.FK_Potion_Ingredient2">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="Potion" EntitySet="Potions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potion_Ingredient3" Association="Self.FK_Potion_Ingredient3">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="Potion" EntitySet="Potions" />
+          </AssociationSet>
           <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
@@ -118,6 +296,27 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище BaseModelContainer" CdmEntityContainer="BaseEntities">
+          <EntitySetMapping Name="Ingredients">
+            <EntityTypeMapping TypeName="BaseModel.Ingredient">
+              <MappingFragment StoreEntitySet="Ingredient">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Potions">
+            <EntityTypeMapping TypeName="BaseModel.Potion">
+              <MappingFragment StoreEntitySet="Potion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IngredientOne" ColumnName="IngredientOne" />
+                <ScalarProperty Name="IngredientTwo" ColumnName="IngredientTwo" />
+                <ScalarProperty Name="IngredientThr" ColumnName="IngredientThr" />
+                <ScalarProperty Name="IngredientFour" ColumnName="IngredientFour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="BaseModel.Role">
               <MappingFragment StoreEntitySet="Roles">

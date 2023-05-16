@@ -68,6 +68,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\NavigatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,6 +95,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Ingredient.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Potion.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Role.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -102,6 +112,9 @@
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NavigatePage.xaml.cs">
+      <DependentUpon>NavigatePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -142,24 +155,30 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="Resources\bottle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\icon.png" />
-  </ItemGroup>
   <ItemGroup>
     <Content Include="Entities\BaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseModel.Context.cs</LastGenOutput>
       <DependentUpon>BaseModel.edmx</DependentUpon>
+      <LastGenOutput>BaseModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Entities\BaseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BaseModel.edmx</DependentUpon>
       <LastGenOutput>BaseModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\arbuz.png" />
+    <Resource Include="Resources\poroshok.png" />
+    <Resource Include="Resources\lapka.png" />
+    <Resource Include="Resources\redstone.png" />
+    <Resource Include="Resources\pyl.png" />
+    <Resource Include="Resources\sahar.png" />
+    <Resource Include="Resources\narost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bottle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

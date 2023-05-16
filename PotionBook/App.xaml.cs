@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PotionBook.Entities;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,7 +14,7 @@ namespace PotionBook
     /// </summary>
     public partial class App : Application
     {
-        public static Entities.BaseEntities Context { get; } = new MaterialEntities();
+        public static Entities.BaseEntities Context { get; } = new BaseEntities();
         public static Entities.User CurrentUser = null;
     }
 }

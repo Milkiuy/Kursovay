@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PotionBook"
         mc:Ignorable="d"
-        Title="Электронный учебник" Height="600" Width="400">
+        Title="Электронный учебник" Height="250" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource BlockCommon}" Margin="10" Name="UserName" HorizontalAlignment="Right" Width="200"></TextBlock>
         <Image Source="/Resources/icon.png" HorizontalAlignment="Left"></Image>
         <Frame Name="FrameMain" NavigationUIVisibility="Hidden" Grid.Row="1" ContentRendered="FrameMain_ContentRendered"/>
     </Grid>
