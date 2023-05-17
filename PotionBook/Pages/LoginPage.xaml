@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="150" d:DesignWidth="300"
+      d:DesignHeight="150" d:DesignWidth="400"
       Title="LoginPage">
 
     <Grid>
@@ -18,8 +18,9 @@
                 <TextBlock Style="{StaticResource BlockCommon}" Text="Пароль:"></TextBlock>
                 <PasswordBox Name="TxtPassword"></PasswordBox>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Orientation="Horizontal">
                 <Button Name="LoginBtn" Click="LoginBtn_Click" Content="Войти"/>
+                <Button Name="RegisterBtn" Click="RegisterBtn_Click" Content="Зарегистрироваться"/>
             </StackPanel>
         </StackPanel>
     </Grid>

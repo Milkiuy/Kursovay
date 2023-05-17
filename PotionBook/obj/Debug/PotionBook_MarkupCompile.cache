@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\10200296\source\repos\PotionBook\PotionBook\obj\Debug\
+C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\
 PotionBook
 none
 false
 DEBUG;TRACE
-C:\Users\10200296\source\repos\PotionBook\PotionBook\App.xaml
-3-480708386
+C:\Users\10200296\Source\Repos\Kursovay\PotionBook\App.xaml
+5518570534
 21929009593
-13-822401057
-18685062103
-Pages\LoginPage.xaml;Pages\NavigatePage.xaml;Windows\MainWindow.xaml;
+171717589087
+18118958313
+Pages\LoginPage.xaml;Pages\NavigatePage.xaml;Pages\RegistrationPage.xaml;Windows\MainWindow.xaml;Windows\RegistrationWindow.xaml;
 
 False
 

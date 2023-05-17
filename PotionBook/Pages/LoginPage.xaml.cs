@@ -39,5 +39,12 @@ namespace PotionBook.Pages
                 MessageBox.Show("Пользователь не найден", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.RegistrationWindow register = new Windows.RegistrationWindow(); 
+            register.Show();
+            Window.GetWindow(this).Close();
+        }
     }
 }

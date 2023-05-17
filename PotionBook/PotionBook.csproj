@@ -64,11 +64,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Windows\RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\NavigatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,10 +123,17 @@
     <Compile Include="Pages\NavigatePage.xaml.cs">
       <DependentUpon>NavigatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -166,6 +180,15 @@
       <DependentUpon>BaseModel.edmx</DependentUpon>
       <LastGenOutput>BaseModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\dyhanie.png" />
+    <Resource Include="Resources\poroh.png" />
+    <Resource Include="Resources\membrana.png" />
+    <Resource Include="Resources\pansir.png" />
+    <Resource Include="Resources\morkov.png" />
+    <Resource Include="Resources\iglo.png" />
+    <Resource Include="Resources\sgustok.png" />
+    <Resource Include="Resources\sleza.png" />
+    <Resource Include="Resources\glaz.png" />
     <Resource Include="Resources\arbuz.png" />
     <Resource Include="Resources\poroshok.png" />
     <Resource Include="Resources\lapka.png" />

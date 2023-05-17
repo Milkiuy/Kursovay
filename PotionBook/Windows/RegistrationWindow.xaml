@@ -1,19 +1,19 @@
-﻿<Window x:Class="PotionBook.MainWindow"
+﻿<Window x:Class="PotionBook.Windows.RegistrationWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PotionBook"
+        xmlns:local="clr-namespace:PotionBook.Windows"
         mc:Ignorable="d"
-        Title="Электронный учебник" Height="300" Width="500">
+        Title="RegistrationWindow" Height="450" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource BlockCommon}" Margin="10" Name="UserName" HorizontalAlignment="Right" Width="200"></TextBlock>
         <Image Source="/Resources/icon.png" HorizontalAlignment="Left"></Image>
-        <Frame Name="FrameMain" NavigationUIVisibility="Hidden" Grid.Row="1" ContentRendered="FrameMain_ContentRendered"/>
+        <Frame Name="FrameMain" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+        <Button Grid.Row="2" x:Name="BtnBack" Content="Назад" Click="BtnBack_Click"/>
     </Grid>
 </Window>
