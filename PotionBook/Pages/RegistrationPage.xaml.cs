@@ -21,7 +21,7 @@ namespace PotionBook.Pages
     /// </summary>
     public partial class RegistrationPage : Page
     {
-        Regex pass = new Regex(@"^\w{8,50}$"); 
+        Regex pass = new Regex(@"^\w{4,50}$"); 
         Regex name = new Regex(@"^[А-ЯЁ][а-яё]+$"); 
         MatchCollection match;
         private Entities.User user = null;
@@ -36,7 +36,38 @@ namespace PotionBook.Pages
 
             if (errorMessage.Length > 0)
             {
-
+                MessageBox.Show(errorMessage, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                var user = new Entities.User();
+                if (TxtPatronymic == null)
+                {
+                    user = new Entities.User
+                    {
+                        Surname = TxtSurname.Text,
+                        Name = TxtName.Text,
+                        Patronymic = "NULL",
+                        Login = TxtLogin.Text,
+                        Password = TxtPass.Password,
+                        RoleID = 3
+                    };
+                }
+                else
+                {
+                    user = new Entities.User
+                    {
+                        Surname = TxtSurname.Text,
+                        Name = TxtName.Text,
+                        Patronymic = TxtPatronymic.Text,
+                        Login = TxtLogin.Text,
+                        Password = TxtPass.Password,
+                        RoleID = 3
+                    };
+                }
+                App.Context.Users.Add(user);
+                App.Context.SaveChanges();
+                MessageBox.Show("Вы успешно зарегистрировались", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
@@ -65,8 +96,12 @@ namespace PotionBook.Pages
                 errorBuilder.AppendLine("Логин обязателен для заполнения;");
             else if (materialFromBD != null && materialFromBD != user)
                 errorBuilder.AppendLine("Такой логин уже используется;");
+            match = pass.Matches(TxtPass.Password);
+            if (match.Count == 0)
             if (string.IsNullOrWhiteSpace(TxtPass.Password))
                 errorBuilder.AppendLine("Пароль обязателен для заполнения;");
+            if (TxtPass.Password != TxtPassRep.Password)
+                errorBuilder.Append("Пароли не совпадают");
             
 
             if (errorBuilder.Length > 0)

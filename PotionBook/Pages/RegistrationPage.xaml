@@ -33,7 +33,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Style="{StaticResource BlockCommon}" Text="Подтверждение пароля*"></TextBlock>
-                    <TextBox Name="TxtPassRep" MaxLength="50"></TextBox>
+                    <PasswordBox Name="TxtPassRep" MaxLength="50"></PasswordBox>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Button Height="30" Width="200" Margin="5" Name="SaveBtn" Click="SaveBtn_Click" Content="Зарегистироваться"></Button>

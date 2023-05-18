@@ -36,5 +36,20 @@ namespace PotionBook.Pages
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
         }
+
+        private void PracticBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TestBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LessonBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

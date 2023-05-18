@@ -46,5 +46,9 @@
             <Setter Property="Height" Value="30"/>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
         </Style>
+        <Style TargetType="Hyperlink">
+            <Setter Property="TextDecorations" Value="None"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

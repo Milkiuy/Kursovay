@@ -27,7 +27,13 @@ namespace PotionBook.Windows
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
+                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                MainWindow main = new MainWindow();
+                main.Show();
+                Window.GetWindow(this).Close();
+            }
         }
     }
 }
