@@ -24,11 +24,9 @@ namespace PotionBook.Pages
         public NavigatePage()
         {
             InitializeComponent();
-        }
-
-        private void BackBtn_Click(object sender, RoutedEventArgs e)
-        {
-
+           
+            MainWindow main = new MainWindow();
+            main.BackBtn.Visibility = Visibility.Visible;
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
