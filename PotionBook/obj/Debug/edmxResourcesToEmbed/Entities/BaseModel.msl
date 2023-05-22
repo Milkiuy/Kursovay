@@ -1,6 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище BaseModelContainer" CdmEntityContainer="BaseEntities">
+    <EntitySetMapping Name="IngredientFours">
+      <EntityTypeMapping TypeName="BaseModel.IngredientFour">
+        <MappingFragment StoreEntitySet="IngredientFour">
+          <ScalarProperty Name="idFour" ColumnName="idFour" />
+          <ScalarProperty Name="NameFour" ColumnName="NameFour" />
+          <ScalarProperty Name="ImageFour" ColumnName="ImageFour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IngredientOnes">
+      <EntityTypeMapping TypeName="BaseModel.IngredientOne">
+        <MappingFragment StoreEntitySet="IngredientOne">
+          <ScalarProperty Name="idOne" ColumnName="idOne" />
+          <ScalarProperty Name="NameOne" ColumnName="NameOne" />
+          <ScalarProperty Name="ImageOne" ColumnName="ImageOne" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IngredientThrs">
+      <EntityTypeMapping TypeName="BaseModel.IngredientThr">
+        <MappingFragment StoreEntitySet="IngredientThr">
+          <ScalarProperty Name="idThr" ColumnName="idThr" />
+          <ScalarProperty Name="NameThr" ColumnName="NameThr" />
+          <ScalarProperty Name="ImageThr" ColumnName="ImageThr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IngredientTwoes">
+      <EntityTypeMapping TypeName="BaseModel.IngredientTwo">
+        <MappingFragment StoreEntitySet="IngredientTwo">
+          <ScalarProperty Name="idTwo" ColumnName="idTwo" />
+          <ScalarProperty Name="NameTwo" ColumnName="NameTwo" />
+          <ScalarProperty Name="ImageTwo" ColumnName="ImageTwo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Potions">
+      <EntityTypeMapping TypeName="BaseModel.Potion">
+        <MappingFragment StoreEntitySet="Potion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IngredientOne" ColumnName="IngredientOne" />
+          <ScalarProperty Name="IngredientTwo" ColumnName="IngredientTwo" />
+          <ScalarProperty Name="IngredientThr" ColumnName="IngredientThr" />
+          <ScalarProperty Name="IngredientFour" ColumnName="IngredientFour" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="BaseModel.Role">
         <MappingFragment StoreEntitySet="Roles">

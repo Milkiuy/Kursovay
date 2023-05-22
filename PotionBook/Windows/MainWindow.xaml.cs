@@ -41,14 +41,5 @@ namespace PotionBook
                 UserName.Text = String.Empty;
             }
         }
-
-        private void BackBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (FrameMain.CanGoBack && MessageBox.Show($"Вы уверены, что хотите вернуться?",
-                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
-            {
-                FrameMain.GoBack();
-            }
-        }
     }
 }

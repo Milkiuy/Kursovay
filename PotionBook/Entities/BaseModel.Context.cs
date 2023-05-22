@@ -25,7 +25,10 @@ namespace PotionBook.Entities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Ingredient> Ingredients { get; set; }
+        public virtual DbSet<IngredientFour> IngredientFours { get; set; }
+        public virtual DbSet<IngredientOne> IngredientOnes { get; set; }
+        public virtual DbSet<IngredientThr> IngredientThrs { get; set; }
+        public virtual DbSet<IngredientTwo> IngredientTwoes { get; set; }
         public virtual DbSet<Potion> Potions { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }

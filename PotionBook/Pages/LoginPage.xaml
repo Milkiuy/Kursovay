@@ -5,11 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="150" d:DesignWidth="400"
+      d:DesignHeight="200" d:DesignWidth="400"
       Title="LoginPage">
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel>
+                <TextBlock Style="{StaticResource BlockHeader}" Text="Авторизация"/>
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Style="{StaticResource BlockCommon}" Text="Логин:"></TextBlock>
                 <TextBox Name="TxtLogin"></TextBox>

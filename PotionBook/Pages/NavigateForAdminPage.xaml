@@ -1,0 +1,19 @@
+﻿<Page x:Class="PotionBook.Pages.NavigateForAdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PotionBook.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="160" d:DesignWidth="200"
+      Title="NavigateForAdminPage">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Button Content="Зелья" x:Name="PotionBtn" Click="PotionBtn_Click"/>
+            <Button Content="Ингредиенты" x:Name="IngredientsBtn" Click="IngredientsBtn_Click"/>
+            <Button Content="Пользователи" x:Name="UserBtn" Click="UserBtn_Click"/>
+            <Button Content="Назад" x:Name="BackBtn" Click="BackBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -23,7 +23,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="Width" Value="100"/>
+            <Setter Property="Width" Value="130"/>
             <Setter Property="TextAlignment" Value="Right"/>
         </Style>
         <Style TargetType="TextBox">
@@ -49,6 +49,29 @@
         <Style TargetType="Hyperlink">
             <Setter Property="TextDecorations" Value="None"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="BlockDescription" >
+            <Setter Property="Margin" Value="10, 3, 0, 0"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Width" Value="500"/>
+            <Setter Property="TextAlignment" Value="Justify"/>
+        </Style>
+        <Style TargetType="Image" x:Key="ProductImage">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="125"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="BlockHeader">
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
         </Style>
     </Application.Resources>
 </Application>

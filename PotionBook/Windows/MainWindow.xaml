@@ -10,9 +10,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <Button Visibility="Hidden" Grid.Row="2" Content="Назад" x:Name="BackBtn" Click="BackBtn_Click"/>
+        <Grid Grid.Row="0" Background="{StaticResource ColorSecondary}"/>
         <TextBlock Style="{StaticResource BlockCommon}" Margin="10" Name="UserName" HorizontalAlignment="Right" Width="200"></TextBlock>
         <Image Source="/Resources/icon.png" HorizontalAlignment="Left"></Image>
         <Frame Name="FrameMain" NavigationUIVisibility="Hidden" Grid.Row="1" ContentRendered="FrameMain_ContentRendered"/>

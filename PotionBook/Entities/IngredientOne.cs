@@ -12,28 +12,19 @@ namespace PotionBook.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Ingredient
+    public partial class IngredientOne
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ingredient()
+        public IngredientOne()
         {
             this.Potions = new HashSet<Potion>();
-            this.Potions1 = new HashSet<Potion>();
-            this.Potions2 = new HashSet<Potion>();
-            this.Potions3 = new HashSet<Potion>();
         }
     
-        public int id { get; set; }
-        public string Name { get; set; }
-        public string Image { get; set; }
+        public int idOne { get; set; }
+        public string NameOne { get; set; }
+        public string ImageOne { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Potion> Potions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Potion> Potions1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Potion> Potions2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Potion> Potions3 { get; set; }
     }
 }

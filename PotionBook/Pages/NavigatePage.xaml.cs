@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using PotionBook.Windows;
 
 namespace PotionBook.Pages
 {
@@ -24,9 +25,11 @@ namespace PotionBook.Pages
         public NavigatePage()
         {
             InitializeComponent();
-           
-            MainWindow main = new MainWindow();
-            main.BackBtn.Visibility = Visibility.Visible;
+
+            if (App.CurrentUser == null || App.CurrentUser.RoleID == 3)
+            {
+                NextBtn.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
@@ -48,6 +51,24 @@ namespace PotionBook.Pages
         private void LessonBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void NextBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PotionWindow potionWindow = new PotionWindow();
+            potionWindow.Show();
+            Window.GetWindow(this).Close();
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
+                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                PotionWindow potion = new PotionWindow();
+                potion.Show();
+                Window.GetWindow(this).Close();
+            }
         }
     }
 }

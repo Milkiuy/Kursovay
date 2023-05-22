@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PotionBook.Windows"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="450" Width="500">
+        Title="Электронный учебник" Height="450" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{StaticResource ColorSecondary}"/>
+        <Grid Grid.Row="2" Background="{StaticResource ColorSecondary}"/>
         <Image Source="/Resources/icon.png" HorizontalAlignment="Left"></Image>
         <Frame Name="FrameMain" NavigationUIVisibility="Hidden" Grid.Row="1"/>
         <Button Grid.Row="2" x:Name="BtnBack" Content="Назад" Click="BtnBack_Click"/>
