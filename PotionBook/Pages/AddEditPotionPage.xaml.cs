@@ -20,6 +20,7 @@ namespace PotionBook.Pages
     /// </summary>
     public partial class AddEditPotionPage : Page
     {
+        private Entities.Potion currentpotion = null;
         public AddEditPotionPage()
         {
             InitializeComponent();
@@ -28,7 +29,8 @@ namespace PotionBook.Pages
         public AddEditPotionPage(Entities.Potion potion)
         {
             InitializeComponent();
-            Title = "Редактировать материал";
+            Title = "Редактирование зелий";
+            currentpotion = potion;
             //currentMaterial = material;
             //TxtArticul.Text = currentMaterial.Articul;
             //TxtCost.Text = currentMaterial.Cost.ToString();
@@ -43,6 +45,24 @@ namespace PotionBook.Pages
             //ComboUnit.SelectedIndex = currentMaterial.UnitID - 1;
             //ImageService.Text = currentMaterial.Image;
             //TxtArticul.IsEnabled = false;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var ingredient = App.Context.IngredientOnes.OrderBy(p => p.idOne).Select(p => p.NameOne).ToArray();
+            for (int i = 0; i < ingredient.Length; i++)
+                ComboOne.Items.Add(ingredient[i]);
+            for (int i = 0;i < ingredient.Length;i++)
+                ComboTwo.Items.Add(ingredient[i]);
+            for(int i = 0;i < ingredient.Length;i++)
+                ComboThr.Items.Add(ingredient[i]);
+            for (int i = 0; i < ingredient.Length; i++)
+                ComboFour.Items.Add(ingredient[i]);
+        }
+
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

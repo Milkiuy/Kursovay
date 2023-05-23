@@ -32,12 +32,6 @@ namespace PotionBook.Pages
             }
         }
 
-        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
-            e.Handled = true;
-        }
-
         private void PracticBtn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -50,24 +44,20 @@ namespace PotionBook.Pages
 
         private void LessonBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Process.Start("https://minecraft.fandom.com/ru/wiki/%D0%97%D0%B5%D0%BB%D1%8C%D0%B5%D0%B2%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D0%B5?file=%25D0%25A1%25D0%25B8%25D1%2581%25D1%2582%25D0%25B5%25D0%25BC%25D0%25B0_%25D0%25B7%25D0%25B5%25D0%25BB%25D1%258C%25D0%25B5%25D0%25B2%25D0%25B0%25D1%2580%25D0%25B5%25D0%25B");
         }
 
         private void NextBtn_Click(object sender, RoutedEventArgs e)
         {
-            PotionWindow potionWindow = new PotionWindow();
-            potionWindow.Show();
-            Window.GetWindow(this).Close();
+            NavigationService.Navigate(new NavigateForAdminPage());
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
-                PotionWindow potion = new PotionWindow();
-                potion.Show();
-                Window.GetWindow(this).Close();
+                NavigationService.GoBack();
             }
         }
     }

@@ -61,6 +61,7 @@ namespace PotionBook.Pages
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
                 MainWindow mainWindow = new MainWindow();
+                mainWindow.FrameMain.Navigate(new NavigateForAdminPage());
                 mainWindow.Show();
                 Window.GetWindow(this).Close();
             }

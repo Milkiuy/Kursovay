@@ -6,9 +6,40 @@
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddEditPotionPage">
+      Title="Добавление зелий" Loaded="Page_Loaded">
 
     <Grid>
-        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Название*"></TextBlock>
+                    <TextBox Name="TxtName" MaxLength="100"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Первый ингредиент*"></TextBlock>
+                    <ComboBox Name="ComboOne"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Второй ингредиент"></TextBlock>
+                    <ComboBox Name="ComboTwo"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Третий ингредиент"></TextBlock>
+                    <ComboBox Name="ComboThr"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Четвертый ингредиент"></TextBlock>
+                    <ComboBox Name="ComboFour"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center">
+                <StackPanel>
+                    
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Height="30" Width="200" Margin="5" Name="SaveBtn" Click="SaveBtn_Click" Content="Coxpанить"></Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

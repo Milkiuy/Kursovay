@@ -49,7 +49,7 @@ namespace PotionBook.Pages {
         #line hidden
         
         
-        #line 52 "..\..\..\Pages\PotionPage.xaml"
+        #line 50 "..\..\..\Pages\PotionPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button BackBtn;
         
@@ -57,7 +57,7 @@ namespace PotionBook.Pages {
         #line hidden
         
         
-        #line 54 "..\..\..\Pages\PotionPage.xaml"
+        #line 52 "..\..\..\Pages\PotionPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button AddPotionBtn;
         
@@ -108,7 +108,7 @@ namespace PotionBook.Pages {
             case 5:
             this.BackBtn = ((System.Windows.Controls.Button)(target));
             
-            #line 52 "..\..\..\Pages\PotionPage.xaml"
+            #line 50 "..\..\..\Pages\PotionPage.xaml"
             this.BackBtn.Click += new System.Windows.RoutedEventHandler(this.BackBtn_Click);
             
             #line default
@@ -117,7 +117,7 @@ namespace PotionBook.Pages {
             case 6:
             this.AddPotionBtn = ((System.Windows.Controls.Button)(target));
             
-            #line 54 "..\..\..\Pages\PotionPage.xaml"
+            #line 52 "..\..\..\Pages\PotionPage.xaml"
             this.AddPotionBtn.Click += new System.Windows.RoutedEventHandler(this.AddPotionBtn_Click);
             
             #line default
@@ -138,7 +138,7 @@ namespace PotionBook.Pages {
             {
             case 3:
             
-            #line 43 "..\..\..\Pages\PotionPage.xaml"
+            #line 41 "..\..\..\Pages\PotionPage.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.EditBtn_Click);
             
             #line default
@@ -146,7 +146,7 @@ namespace PotionBook.Pages {
             break;
             case 4:
             
-            #line 44 "..\..\..\Pages\PotionPage.xaml"
+            #line 42 "..\..\..\Pages\PotionPage.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.DeleteBtn_Click);
             
             #line default

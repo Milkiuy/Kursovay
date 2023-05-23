@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PotionBook.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,32 +24,46 @@ namespace PotionBook.Pages
         public NavigateForAdminPage()
         {
             InitializeComponent();
+            if (App.CurrentUser == null || App.CurrentUser.RoleID == 2)
+            {
+                UserBtn.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                Window.GetWindow(this).Close();
+                NavigationService.GoBack();
             }
         }
 
         private void UserBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new UserPage());
+            PotionWindow potion = new PotionWindow();
+            potion.FrameMain.Navigate(new UserPage());
+            potion.Title = "Зелья";
+            potion.Show();
+            Window.GetWindow(this).Close();
         }
 
         private void IngredientsBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new IngredientPage());
+            PotionWindow potion = new PotionWindow();
+            potion.FrameMain.Navigate(new IngredientPage());
+            potion.Title = "Ингредиенты";
+            potion.Show();
+            Window.GetWindow(this).Close();
         }
 
         private void PotionBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PotionPage());
+            PotionWindow potion = new PotionWindow();
+            potion.FrameMain.Navigate(new PotionPage());
+            potion.Title = "Пользователи";
+            potion.Show();
+            Window.GetWindow(this).Close();
         }
     }
 }

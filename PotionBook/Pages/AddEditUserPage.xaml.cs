@@ -20,9 +20,16 @@ namespace PotionBook.Pages
     /// </summary>
     public partial class AddEditUserPage : Page
     {
+        private Entities.Potion currentpotion = null;
         public AddEditUserPage()
         {
             InitializeComponent();
+        }
+        public AddEditUserPage(Entities.Potion user)
+        {
+            InitializeComponent();
+            Title = "Редактирование пользователей";
+            currentpotion = user;
         }
     }
 }

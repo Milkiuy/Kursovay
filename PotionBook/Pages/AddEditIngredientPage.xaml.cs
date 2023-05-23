@@ -20,9 +20,17 @@ namespace PotionBook.Pages
     /// </summary>
     public partial class AddEditIngredientPage : Page
     {
+        private Entities.Potion currentpotion = null;
         public AddEditIngredientPage()
         {
             InitializeComponent();
+        }
+
+        public AddEditIngredientPage(Entities.Potion engredient)
+        {
+            InitializeComponent();
+            Title = "Редактирование ингредиентов";
+            currentpotion = engredient;
         }
     }
 }
