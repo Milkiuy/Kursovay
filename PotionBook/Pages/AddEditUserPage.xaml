@@ -6,9 +6,42 @@
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddEditUserPage">
+      Title="Добавление пользователей">
 
     <Grid>
-        
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Фамилия*"></TextBlock>
+                    <TextBox Name="TxtSurname" MaxLength="100"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Имя*"></TextBlock>
+                    <TextBox Name="TxtName"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Отчество"></TextBlock>
+                    <TextBox Name="TxtPatronymic"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Логин"></TextBlock>
+                    <TextBox Name="TxtLogin"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Пароль"></TextBlock>
+                    <TextBox Name="TxtPass"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Height="30" Width="200" Margin="5" Name="SaveBtn" Click="SaveBtn_Click" Content="Coxpанить"></Button>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Name="BackBtn" Click="BackBtn_Click" Content="Назад"/>
+            <Button Name="LogOutBtn" Click="LogOutBtn_Click" Content="Выйти"/>
+        </StackPanel>
     </Grid>
 </Page>

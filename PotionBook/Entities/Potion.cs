@@ -24,7 +24,7 @@ namespace PotionBook.Entities
                 return IngredientOne1.NameOne.ToString();
             }
         }
-        public Nullable<int> IngredientTwo { get; set; }
+        public int IngredientTwo { get; set; }
         public string NameIngredientTwo
         {
             get
@@ -39,7 +39,7 @@ namespace PotionBook.Entities
                 }
             }
         }
-        public Nullable<int> IngredientThr { get; set; }
+        public int IngredientThr { get; set; }
         public string NameIngredientThr
         {
             get
@@ -54,7 +54,7 @@ namespace PotionBook.Entities
                 }
             }
         }
-        public Nullable<int> IngredientFour { get; set; }
+        public int IngredientFour { get; set; }
         public string NameIngredientFour
         {
             get
@@ -76,11 +76,11 @@ namespace PotionBook.Entities
             {
                 if (String.IsNullOrEmpty(Image) || String.IsNullOrWhiteSpace(Image))
                 {
-                    return "/Resources/icon.png";
+                    return "Properties/Resources/icon";
                 }
                 else
                 {
-                    return "/Resources/" + Image;
+                    return "Propetries/Resources/" + Image;
                 }
             }
         }

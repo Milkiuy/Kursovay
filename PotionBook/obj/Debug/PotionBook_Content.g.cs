@@ -10,8 +10,5 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entities/basemodel.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entities/basemodel.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("webview2loader.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("webview2loader.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("webview2loader.dll")]
 
 

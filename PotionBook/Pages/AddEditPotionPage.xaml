@@ -33,13 +33,19 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel VerticalAlignment="Center">
-                <StackPanel>
-                    
-                </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border Margin="5" Height="175" Width="200" BorderBrush="{StaticResource ColorAccent}" BorderThickness="1">
+                        <Image x:Name="ImageSerice"/>
+                    </Border>
+                    <Button Height="30" Width="200" Margin="5" Name="SelectImageBtn" Click="SelectImageBtn_Click" Content="Выбрать фотографию"/>
                     <Button Height="30" Width="200" Margin="5" Name="SaveBtn" Click="SaveBtn_Click" Content="Coxpанить"></Button>
                 </StackPanel>
             </StackPanel>
+            
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Name="BackBtn" Click="BackBtn_Click" Content="Назад"/>
+            <Button Name="LogOutBtn" Click="LogOutBtn_Click" Content="Выйти"/>
         </StackPanel>
     </Grid>
 </Page>
