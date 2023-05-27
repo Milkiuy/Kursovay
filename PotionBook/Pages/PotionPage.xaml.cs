@@ -57,7 +57,7 @@ namespace PotionBook.Pages
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
                 MainWindow mainWindow = new MainWindow();

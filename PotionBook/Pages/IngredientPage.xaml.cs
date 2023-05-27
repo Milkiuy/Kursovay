@@ -24,5 +24,51 @@ namespace PotionBook.Pages
         {
             InitializeComponent();
         }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var currentIngredients = (sender as Button).DataContext as Entities.Potion;
+            NavigationService.Navigate(new AddEditPotionPage(currentIngredients));
+        }
+
+        private void UpdatePotion()
+        {
+            var ingredients = App.Context.Potions.ToList();
+            ListIngredients.ItemsSource = ingredients;
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var currentIngredients = (sender as Button).DataContext as Entities.IngredientOne;
+            if (MessageBox.Show($"Вы уверены, что хотите удалить ингредент: {currentIngredients.NameOne}?",
+                    "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                App.Context.IngredientOnes.Remove(currentIngredients);
+                App.Context.SaveChanges();
+                UpdatePotion();
+            }
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?",
+                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.FrameMain.Navigate(new NavigateForAdminPage());
+                mainWindow.Show();
+                Window.GetWindow(this).Close();
+            }
+        }
+
+        private void AddIngredientBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditIngredientPage());
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdatePotion();
+        }
     }
 }
