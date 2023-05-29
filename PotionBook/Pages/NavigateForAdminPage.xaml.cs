@@ -32,11 +32,7 @@ namespace PotionBook.Pages
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show($"Вы уверены, что хотите вернуться?",
-                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
-            {
-                NavigationService.GoBack();
-            }
+            NavigationService.GoBack();
         }
 
         private void UserBtn_Click(object sender, RoutedEventArgs e)

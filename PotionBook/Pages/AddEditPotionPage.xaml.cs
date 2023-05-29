@@ -34,9 +34,9 @@ namespace PotionBook.Pages
             currentpotion = potion;
             TxtName.Text = currentpotion.Name;
             ComboOne.SelectedIndex = currentpotion.IngredientOne - 1;
-            ComboTwo.SelectedIndex = currentpotion.IngredientTwo - 1;
-            ComboThr.SelectedIndex = currentpotion.IngredientThr - 1;
-            ComboFour.SelectedIndex = currentpotion.IngredientFour - 1;            
+            ComboTwo.SelectedIndex = (int)currentpotion.IngredientTwo - 1;
+            ComboThr.SelectedIndex = (int)currentpotion.IngredientThr - 1;
+            ComboFour.SelectedIndex = (int)currentpotion.IngredientFour - 1;            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

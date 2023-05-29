@@ -25,7 +25,7 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="70"/>
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding CorrectImage}" Style="{StaticResource ProductImage}"/>
+                            <Image Source="{Binding CorrectPhoto}" Style="{StaticResource ProductImage}"/>
                             <StackPanel Grid.Column="1">
                                 <TextBlock Style="{StaticResource BlockDescription}" Width="auto"
                                            Text="{Binding NameOne}"/>
@@ -41,6 +41,6 @@
         </ListView>
         <Button HorizontalAlignment="Left" Grid.Row="1" Content="Назад" Name="BackBtn" Click="BackBtn_Click"/>
         <Button HorizontalAlignment="Right" Grid.Row="1"
-                Content="Добавить зелье" Name="AddIngredientBtn_Click" Click="AddPotionBtn_Click"/>
+                Content="Добавить ингредиент" Name="AddIngredientBtn" Click="AddIngredientBtn_Click"/>
     </Grid>
 </Page>

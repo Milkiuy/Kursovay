@@ -41,9 +41,46 @@ namespace PotionBook.Pages
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
+            string patronymic;
+            if (TxtPatronymic.Text == null)
+                patronymic = "NULL";
+            else patronymic = TxtPatronymic.Text;
+            var errorMessage = CheckErrors();
 
+            if (errorMessage.Length > 0)
+            {
+                MessageBox.Show(errorMessage, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (currentuser == null)
+                {
+                    var user = new Entities.User
+                    {
+                        Surname = TxtSurname.Text,
+                        Name = TxtName.Text,
+                        Patronymic = patronymic,
+                        Login = TxtLogin.Text,
+                        Password = TxtPass.Text
+                    };
+
+                    App.Context.Users.Add(user);
+                    App.Context.SaveChanges();
+                    MessageBox.Show("Пользователь успешно создан", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    currentuser.Surname = TxtSurname.Text;
+                    currentuser.Name = TxtName.Text;
+                    currentuser.Patronymic = patronymic;
+                    currentuser.Login = TxtLogin.Text;
+                    currentuser.Password = TxtPass.Text;
+
+                    App.Context.SaveChanges();
+                    MessageBox.Show("Пользователь успешно обновлен", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
         }
-
         private string CheckErrors()
         {
             var errorBuilder = new StringBuilder();
@@ -59,6 +96,26 @@ namespace PotionBook.Pages
                 errorBuilder.Insert(0, "Устраните следующие ошибки:\n");
 
             return errorBuilder.ToString();
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
+                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                NavigationService.GoBack();
+            }
+        }
+
+        private void LogOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите выйти?\nНесохраненные данные могут быть утеряны",
+                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Window.GetWindow(this).Close();
+            }
         }
     }
 }

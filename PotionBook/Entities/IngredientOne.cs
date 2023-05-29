@@ -30,11 +30,11 @@ namespace PotionBook.Entities
             {
                 if (String.IsNullOrEmpty(ImageOne) || String.IsNullOrWhiteSpace(ImageOne))
                 {
-                    return "Properties/Resources/icon";
+                    return "/Resources/icon.png";
                 }
                 else
                 {
-                    return "Propetries/Resources/" + ImageOne;
+                    return "/Resources/" + ImageOne;
                 }
             }
         }

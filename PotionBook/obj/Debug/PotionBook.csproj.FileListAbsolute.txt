@@ -187,3 +187,13 @@ C:\Users\milki\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.csproj.Core
 C:\Users\milki\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.csproj.CopyComplete
 C:\Users\milki\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.exe
 C:\Users\milki\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.pdb
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\AddEditIngredientPage.g.cs
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\AddEditUserPage.g.cs
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\IngredientPage.g.cs
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\NavigateForAdminPage.g.cs
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\UserPage.g.cs
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\AddEditIngredientPage.baml
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\AddEditUserPage.baml
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\IngredientPage.baml
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\NavigateForAdminPage.baml
+C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\UserPage.baml

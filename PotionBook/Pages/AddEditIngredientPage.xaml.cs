@@ -126,10 +126,7 @@ namespace PotionBook.Pages
             if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.FrameMain.Navigate(new IngredientPage());
-                mainWindow.Show();
-                Window.GetWindow(this).Close();
+                NavigationService.GoBack();
             }
         }
 

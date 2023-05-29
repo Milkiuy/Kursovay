@@ -33,7 +33,7 @@ namespace PotionBook.Pages
 
         private void UpdatePotion()
         {
-            var ingredients = App.Context.Potions.ToList();
+            var ingredients = App.Context.IngredientOnes.ToList();
             ListIngredients.ItemsSource = ingredients;
         }
 

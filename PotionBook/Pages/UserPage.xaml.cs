@@ -31,21 +31,21 @@ namespace PotionBook.Pages
             NavigationService.Navigate(new AddEditUserPage(currentUsers));
         }
 
-        private void UpdatePotion()
+        private void UpdateUser()
         {
-            var ingredients = App.Context.Potions.ToList();
-            ListUsers.ItemsSource = ingredients;
+            var users = App.Context.Users.ToList();
+            ListUsers.ItemsSource = users;
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             var currentUsers = (sender as Button).DataContext as Entities.User;
-            if (MessageBox.Show($"Вы уверены, что хотите удалить ингредент: {currentUsers.Surname} {currentUsers.Name}?",
+            if (MessageBox.Show($"Вы уверены, что хотите удалить пользователя: {currentUsers.Surname} {currentUsers.Name}?",
                     "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 App.Context.Users.Remove(currentUsers);
                 App.Context.SaveChanges();
-                UpdatePotion();
+                UpdateUser();
             }
         }
 
@@ -61,14 +61,14 @@ namespace PotionBook.Pages
             }
         }
 
-        private void AddIngredientBtn_Click(object sender, RoutedEventArgs e)
+        private void AddUserBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddEditUserPage());
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            UpdatePotion();
+            UpdateUser();
         }
     }
 }

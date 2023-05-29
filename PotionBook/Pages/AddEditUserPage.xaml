@@ -24,11 +24,11 @@
                     <TextBox Name="TxtPatronymic"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Style="{StaticResource BlockCommon}" Text="Логин"></TextBlock>
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Логин*"></TextBlock>
                     <TextBox Name="TxtLogin"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Style="{StaticResource BlockCommon}" Text="Пароль"></TextBlock>
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Пароль*"></TextBlock>
                     <TextBox Name="TxtPass"></TextBox>
                 </StackPanel>
             </StackPanel>
