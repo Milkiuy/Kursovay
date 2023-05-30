@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="160" d:DesignWidth="200"
+      d:DesignHeight="200" d:DesignWidth="200"
       Title="NavigateForAdminPage">
 
     <Grid>
@@ -14,6 +14,7 @@
             <Button Content="Ингредиенты" x:Name="IngredientsBtn" Click="IngredientsBtn_Click"/>
             <Button Content="Пользователи" x:Name="UserBtn" Click="UserBtn_Click"/>
             <Button Content="Назад" x:Name="BackBtn" Click="BackBtn_Click"/>
+            <Button Content="Выйти" x:Name="LogOutBtn" Click="LogOutBtn_Click"/>
         </StackPanel>
     </Grid>
 </Page>

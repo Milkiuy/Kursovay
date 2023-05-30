@@ -14,7 +14,7 @@
             <Button Content="Тесты" x:Name="TestBtn" Click="TestBtn_Click"/>
             <Button Content="Практика" x:Name="PracticBtn" Click="PracticBtn_Click"/>
             <Button Content="Далее" x:Name="NextBtn" Click="NextBtn_Click"/>
-            <Button Content="Назад" x:Name="BackBtn" Click="BackBtn_Click"/>
+            <Button Content="Выйти" x:Name="LogOutBtn" Click="LogOutBtn_Click"/>
         </StackPanel>
     </Grid>
 </Page>

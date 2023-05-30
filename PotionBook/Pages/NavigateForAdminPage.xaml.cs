@@ -32,7 +32,7 @@ namespace PotionBook.Pages
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new NavigatePage());
         }
 
         private void UserBtn_Click(object sender, RoutedEventArgs e)
@@ -60,6 +60,15 @@ namespace PotionBook.Pages
             potion.Title = "Пользователи";
             potion.Show();
             Window.GetWindow(this).Close();
+        }
+
+        private void LogOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите выйти?",
+                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                NavigationService.Navigate(new LoginPage());
+            }
         }
     }
 }

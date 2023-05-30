@@ -27,11 +27,14 @@ namespace PotionBook.Pages
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            var currentIngredients = (sender as Button).DataContext as Entities.Potion;
-            NavigationService.Navigate(new AddEditPotionPage(currentIngredients));
+            var currentIngredients = (sender as Button).DataContext as Entities.IngredientOne;
+            var currentTwo = (sender as Button).DataContext as Entities.IngredientTwo;
+            var currentThr = (sender as Button).DataContext as Entities.IngredientThr;
+            var currentFour = (sender as Button).DataContext as Entities.IngredientFour;
+            NavigationService.Navigate(new AddEditIngredientPage(currentIngredients, currentTwo, currentThr, currentFour));
         }
 
-        private void UpdatePotion()
+        private void UpdateIngredient()
         {
             var ingredients = App.Context.IngredientOnes.ToList();
             ListIngredients.ItemsSource = ingredients;
@@ -45,7 +48,7 @@ namespace PotionBook.Pages
             {
                 App.Context.IngredientOnes.Remove(currentIngredients);
                 App.Context.SaveChanges();
-                UpdatePotion();
+                UpdateIngredient();
             }
         }
 
@@ -68,7 +71,7 @@ namespace PotionBook.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            UpdatePotion();
+            UpdateIngredient();
         }
     }
 }

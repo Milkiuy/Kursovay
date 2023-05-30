@@ -20,7 +20,7 @@
                     <ComboBox Name="ComboOne"></ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Style="{StaticResource BlockCommon}" Text="Второй ингредиент"></TextBlock>
+                    <TextBlock Style="{StaticResource BlockCommon}" Text="Второй ингредиент*"></TextBlock>
                     <ComboBox Name="ComboTwo"></ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">

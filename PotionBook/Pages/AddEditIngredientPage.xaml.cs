@@ -56,7 +56,7 @@ namespace PotionBook.Pages
             }
             else
             {
-                if (currentingOne == null)
+                if (currentingOne == null && currentingTwo == null && currentingThr == null && currentingFour == null)
                 {
                     var ingredientOne = new Entities.IngredientOne
                     {
@@ -85,12 +85,14 @@ namespace PotionBook.Pages
                     App.Context.IngredientFours.Add(ingredientFour);
                     App.Context.SaveChanges();
                     MessageBox.Show("Ингредиент успешно создан", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    NavigationService.Navigate(new IngredientPage());
                 }
                 else
                 {
                     currentingOne.NameOne = TxtName.Text;
                     currentingOne.ImageOne = "NULL";
 
+                    //App.Context.IngredientTwoes.
                     currentingTwo.NameTwo = TxtName.Text;
                     currentingTwo.ImageTwo = "NULL";
 
@@ -102,6 +104,7 @@ namespace PotionBook.Pages
 
                     App.Context.SaveChanges();
                     MessageBox.Show("Ингредиент успешно обновлен", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    NavigationService.Navigate(new IngredientPage());
                 }
             }
         }
@@ -126,7 +129,7 @@ namespace PotionBook.Pages
             if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
-                NavigationService.GoBack();
+                NavigationService.Navigate(new IngredientPage());
             }
         }
 

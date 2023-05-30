@@ -67,6 +67,7 @@ namespace PotionBook.Pages
                     App.Context.Users.Add(user);
                     App.Context.SaveChanges();
                     MessageBox.Show("Пользователь успешно создан", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    NavigationService.Navigate(new UserPage());
                 }
                 else
                 {
@@ -78,6 +79,7 @@ namespace PotionBook.Pages
 
                     App.Context.SaveChanges();
                     MessageBox.Show("Пользователь успешно обновлен", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    NavigationService.Navigate(new UserPage());
                 }
             }
         }
@@ -103,7 +105,7 @@ namespace PotionBook.Pages
             if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
-                NavigationService.GoBack();
+                NavigationService.Navigate(new UserPage());
             }
         }
 

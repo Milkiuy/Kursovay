@@ -24,19 +24,12 @@ namespace PotionBook.Entities
                 return IngredientOne1.NameOne.ToString();
             }
         }
-        public Nullable<int> IngredientTwo { get; set; }
+        public int IngredientTwo { get; set; }
         public string NameIngredientTwo
         {
             get
             {
-                if (String.IsNullOrEmpty(IngredientTwo.ToString()) || String.IsNullOrWhiteSpace(IngredientTwo.ToString()))
-                {
-                    return "";
-                }
-                else
-                {
-                    return IngredientTwo1.NameTwo.ToString();
-                }
+                return IngredientTwo1.NameTwo.ToString();
             }
         }
         public Nullable<int> IngredientThr { get; set; }

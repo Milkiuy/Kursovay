@@ -33,10 +33,12 @@ namespace PotionBook.Pages
             Title = "Редактирование зелий";
             currentpotion = potion;
             TxtName.Text = currentpotion.Name;
-            ComboOne.SelectedIndex = currentpotion.IngredientOne - 1;
-            ComboTwo.SelectedIndex = (int)currentpotion.IngredientTwo - 1;
-            ComboThr.SelectedIndex = (int)currentpotion.IngredientThr - 1;
-            ComboFour.SelectedIndex = (int)currentpotion.IngredientFour - 1;            
+            ComboOne.SelectedIndex = currentpotion.IngredientOne;
+            ComboTwo.SelectedIndex = currentpotion.IngredientTwo;
+            if (currentpotion.IngredientThr != null)
+                ComboThr.SelectedIndex = (int)currentpotion.IngredientThr;
+            if (currentpotion.IngredientFour != null)
+                ComboFour.SelectedIndex = (int)currentpotion.IngredientFour;            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -54,16 +56,6 @@ namespace PotionBook.Pages
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            string two, three, four;
-            if (ComboTwo.SelectedItem == null)
-                two = "NULL";
-            else two = ComboTwo.SelectedItem.ToString();
-            if (ComboThr.SelectedItem == null)
-                three = "NULL";
-            else three = ComboThr.SelectedItem.ToString();
-            if (ComboFour.SelectedItem == null) 
-                four = "NULL";
-            else four = ComboFour.SelectedItem.ToString();
             var errorMessage = CheckErrors();
 
             if (errorMessage.Length > 0)
@@ -74,39 +66,80 @@ namespace PotionBook.Pages
             {
                 if (currentpotion == null)
                 {
-                    var potion = new Entities.Potion
+                    var potion = new Entities.Potion();
+                    if (ComboThr.SelectedItem == null && ComboFour.SelectedItem == null)
                     {
-                        Name = TxtName.Text,
-                        IngredientOne = App.Context.IngredientOnes.Where(p => p.NameOne == ComboOne.SelectedItem.ToString())
+                        potion = new Entities.Potion
+                        {
+                            Name = TxtName.Text,
+                            IngredientOne = App.Context.IngredientOnes.Where(p => p.NameOne == ComboOne.SelectedItem.ToString())
                         .Select(p => p.idOne).FirstOrDefault(),
-                        IngredientTwo = App.Context.IngredientTwoes.Where(p => p.NameTwo == two)
+                            IngredientTwo = App.Context.IngredientTwoes.Where(p => p.NameTwo == ComboTwo.SelectedItem.ToString())
                         .Select(p => p.idTwo).FirstOrDefault(),
-                        IngredientThr = App.Context.IngredientThrs.Where(p => p.NameThr == three)
+                            IngredientThr = null,
+                            IngredientFour = null,
+                            Image = "NULL"
+                        };
+                    }
+                    else if (ComboFour.SelectedItem == null)
+                    {
+                        potion = new Entities.Potion
+                        {
+                            Name = TxtName.Text,
+                            IngredientOne = App.Context.IngredientOnes.Where(p => p.NameOne == ComboOne.SelectedItem.ToString())
+                        .Select(p => p.idOne).FirstOrDefault(),
+                            IngredientTwo = App.Context.IngredientTwoes.Where(p => p.NameTwo == ComboTwo.SelectedItem.ToString())
+                        .Select(p => p.idTwo).FirstOrDefault(),
+                            IngredientThr = App.Context.IngredientThrs.Where(p => p.NameThr == ComboThr.SelectedItem.ToString())
                         .Select(p => p.idThr).FirstOrDefault(),
-                        IngredientFour = App.Context.IngredientFours.Where(p => p.NameFour == four)
+                            IngredientFour = null,
+                            Image = "NULL"
+                        };
+                    }
+                    else
+                    {
+                        potion = new Entities.Potion
+                        {
+                            Name = TxtName.Text,
+                            IngredientOne = App.Context.IngredientOnes.Where(p => p.NameOne == ComboOne.SelectedItem.ToString())
+                        .Select(p => p.idOne).FirstOrDefault(),
+                            IngredientTwo = App.Context.IngredientTwoes.Where(p => p.NameTwo == ComboTwo.SelectedItem.ToString())
+                        .Select(p => p.idTwo).FirstOrDefault(),
+                            IngredientThr = App.Context.IngredientThrs.Where(p => p.NameThr == ComboThr.SelectedItem.ToString())
+                        .Select(p => p.idThr).FirstOrDefault(),
+                            IngredientFour = App.Context.IngredientFours.Where(p => p.NameFour == ComboFour.SelectedItem.ToString())
                         .Select(p => p.idFour).FirstOrDefault(),
-                        Image = "NULL"
-                    };
+                            Image = "NULL"
+                        };
+                    }
 
                     App.Context.Potions.Add(potion);
                     App.Context.SaveChanges();
                     MessageBox.Show("Зелье успешно создано", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    NavigationService.Navigate(new PotionPage());
                 }
                 else
                 {
                     currentpotion.Name = TxtName.Text;
                     currentpotion.IngredientOne = App.Context.IngredientOnes.Where(p => p.NameOne == ComboOne.SelectedItem.ToString())
                         .Select(p => p.idOne).FirstOrDefault();
-                    currentpotion.IngredientTwo = App.Context.IngredientTwoes.Where(p => p.NameTwo == two)
+                    currentpotion.IngredientTwo = App.Context.IngredientTwoes.Where(p => p.NameTwo == ComboTwo.SelectedItem.ToString())
                         .Select(p => p.idTwo).FirstOrDefault();
-                    currentpotion.IngredientThr = App.Context.IngredientThrs.Where(p => p.NameThr == three)
-                        .Select(p => p.idThr).FirstOrDefault();
-                    currentpotion.IngredientFour = App.Context.IngredientFours.Where(p => p.NameFour == four)
-                    .Select(p => p.idFour).FirstOrDefault();
+                    if (ComboThr.SelectedItem == null)
+                        currentpotion.IngredientThr = null;
+                    else
+                        currentpotion.IngredientThr = App.Context.IngredientThrs.Where(p => p.NameThr == ComboThr.SelectedItem.ToString())
+                            .Select(p => p.idThr).FirstOrDefault();
+                    if (ComboFour.SelectedItem == null)
+                        currentpotion.IngredientFour = null;
+                    else
+                        currentpotion.IngredientFour = App.Context.IngredientFours.Where(p => p.NameFour == ComboFour.SelectedItem.ToString())
+                            .Select(p => p.idFour).FirstOrDefault();
                     currentpotion.Image = "NULL";
 
                     App.Context.SaveChanges();
                     MessageBox.Show("Зелье успешно обновлено", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    NavigationService.Navigate(new PotionPage());
                 }
             }    
         }
@@ -122,6 +155,10 @@ namespace PotionBook.Pages
                 errorBuilder.AppendLine("Такое имя уже есть в базе данных;");
             if (ComboOne.SelectedItem == null)
                 errorBuilder.AppendLine("Выберите первый ингредиент;");
+            if (ComboTwo.SelectedItem == null)
+                errorBuilder.AppendLine("Выберите второй ингредиент;");
+            if (ComboThr.SelectedItem == null && ComboFour.SelectedItem != null)
+                errorBuilder.AppendLine("Сначала выберите третий ингредиент;");
             if (errorBuilder.Length > 0)
                 errorBuilder.Insert(0, "Устраните следующие ошибки:\n");
 
@@ -138,10 +175,7 @@ namespace PotionBook.Pages
             if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.FrameMain.Navigate(new PotionPage());
-                mainWindow.Show();
-                Window.GetWindow(this).Close();
+                NavigationService.Navigate(new PotionPage());
             }
         }
 

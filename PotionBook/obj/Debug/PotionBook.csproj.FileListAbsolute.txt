@@ -35,8 +35,6 @@ C:\Users\10200296\Source\Repos\Kursovay\PotionBook\bin\Debug\EntityFramework.xml
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
-C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.csproj.AssemblyReference.cache
-C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.csproj.SuggestedBindingRedirects.cache
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\Pages\LoginPage.g.cs
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\Pages\NavigatePage.g.cs
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\Windows\MainWindow.g.cs
@@ -197,3 +195,4 @@ C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\AddEditUserPa
 C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\IngredientPage.baml
 C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\NavigateForAdminPage.baml
 C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\UserPage.baml
+C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.csprojAssemblyReference.cache

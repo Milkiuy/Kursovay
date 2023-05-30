@@ -52,12 +52,12 @@ namespace PotionBook.Pages
             NavigationService.Navigate(new NavigateForAdminPage());
         }
 
-        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        private void LogOutBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show($"Вы уверены, что хотите вернуться?",
+            if (MessageBox.Show($"Вы уверены, что хотите выйти?",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
-                NavigationService.GoBack();
+                NavigationService.Navigate(new LoginPage());
             }
         }
     }
