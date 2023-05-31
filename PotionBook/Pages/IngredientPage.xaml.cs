@@ -28,10 +28,7 @@ namespace PotionBook.Pages
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             var currentIngredients = (sender as Button).DataContext as Entities.IngredientOne;
-            var currentTwo = (sender as Button).DataContext as Entities.IngredientTwo;
-            var currentThr = (sender as Button).DataContext as Entities.IngredientThr;
-            var currentFour = (sender as Button).DataContext as Entities.IngredientFour;
-            NavigationService.Navigate(new AddEditIngredientPage(currentIngredients, currentTwo, currentThr, currentFour));
+            NavigationService.Navigate(new AddEditIngredientPage(currentIngredients));
         }
 
         private void UpdateIngredient()
@@ -47,6 +44,9 @@ namespace PotionBook.Pages
                     "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 App.Context.IngredientOnes.Remove(currentIngredients);
+                //App.Context.IngredientTwoes.Remove(currentIngredients);
+                //App.Context.IngredientThrs.Remove(currentIngredients);
+                //App.Context.IngredientFours.Remove(currentIngredients);
                 App.Context.SaveChanges();
                 UpdateIngredient();
             }

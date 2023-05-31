@@ -30,14 +30,11 @@ namespace PotionBook.Pages
             InitializeComponent();
         }
 
-        public AddEditIngredientPage(Entities.IngredientOne engredientOne, Entities.IngredientTwo engredientTwo, Entities.IngredientThr engredientThr, Entities.IngredientFour engredientFour)
+        public AddEditIngredientPage(Entities.IngredientOne engredientOne)
         {
             InitializeComponent();
             Title = "Редактирование ингредиентов";
             currentingOne = engredientOne;
-            currentingTwo = engredientTwo;
-            currentingThr = engredientThr;
-            currentingFour = engredientFour;
             TxtName.Text = currentingOne.NameOne;
         }
 
@@ -92,15 +89,14 @@ namespace PotionBook.Pages
                     currentingOne.NameOne = TxtName.Text;
                     currentingOne.ImageOne = "NULL";
 
-                    //App.Context.IngredientTwoes.
-                    currentingTwo.NameTwo = TxtName.Text;
-                    currentingTwo.ImageTwo = "NULL";
+                    //currentingTwo.NameTwo = TxtName.Text;
+                    //currentingTwo.ImageTwo = "NULL";
 
-                    currentingThr.NameThr = TxtName.Text;
-                    currentingThr.ImageThr = "NULL";
+                    //currentingThr.NameThr = TxtName.Text;
+                    //currentingThr.ImageThr = "NULL";
 
-                    currentingFour.NameFour = TxtName.Text;
-                    currentingFour.ImageFour = "NULL";
+                    //currentingFour.NameFour = TxtName.Text;
+                    //currentingFour.ImageFour = "NULL";
 
                     App.Context.SaveChanges();
                     MessageBox.Show("Ингредиент успешно обновлен", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
