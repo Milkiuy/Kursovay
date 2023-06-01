@@ -17,67 +17,11 @@ namespace PotionBook.Entities
         public int id { get; set; }
         public string Name { get; set; }
         public int IngredientOne { get; set; }
-        public string NameIngredientOne
-        {
-            get
-            {
-                return IngredientOne1.NameOne.ToString();
-            }
-        }
         public int IngredientTwo { get; set; }
-        public string NameIngredientTwo
-        {
-            get
-            {
-                return IngredientTwo1.NameTwo.ToString();
-            }
-        }
         public Nullable<int> IngredientThr { get; set; }
-        public string NameIngredientThr
-        {
-            get
-            {
-                if (String.IsNullOrEmpty(IngredientThr.ToString()) || String.IsNullOrWhiteSpace(IngredientThr.ToString()))
-                {
-                    return "";
-                }
-                else
-                {
-                    return IngredientThr1.NameThr.ToString();
-                }
-            }
-        }
         public Nullable<int> IngredientFour { get; set; }
-        public string NameIngredientFour
-        {
-            get
-            {
-                if (IngredientFour.ToString() == null || String.IsNullOrEmpty(IngredientFour.ToString()) || String.IsNullOrWhiteSpace(IngredientFour.ToString()))
-                {
-                    return "";
-                }
-                else
-                {
-                    return IngredientFour1.NameFour.ToString();
-                }
-            }
-        }
-        public string Image { get; set; }
-        public string CorrectImage
-        {
-            get
-            {
-                if (String.IsNullOrEmpty(Image) || String.IsNullOrWhiteSpace(Image))
-                {
-                    return "/Resources/icon.png";
-                }
-                else
-                {
-                    return "/Resources/" + Image;
-                }
-            }
-        }
-
+        public byte[] Image { get; set; }
+    
         public virtual IngredientFour IngredientFour1 { get; set; }
         public virtual IngredientOne IngredientOne1 { get; set; }
         public virtual IngredientThr IngredientThr1 { get; set; }

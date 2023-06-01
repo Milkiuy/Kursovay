@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -22,9 +26,8 @@ namespace PotionBook.Pages
     public partial class AddEditIngredientPage : Page
     {
         private Entities.IngredientOne currentingOne = null;
-        private Entities.IngredientTwo currentingTwo = null;
-        private Entities.IngredientThr currentingThr = null;
-        private Entities.IngredientFour currentingFour = null;
+        private byte[] data = null;
+        string path = null;
         public AddEditIngredientPage()
         {
             InitializeComponent();
@@ -40,7 +43,15 @@ namespace PotionBook.Pages
 
         private void SelectImageBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenFileDialog fileOpen = new OpenFileDialog();
+            fileOpen.Multiselect = false;
+            fileOpen.Filter = "Image | *.png; *.jpg; *.jpeg";
+            if (fileOpen.ShowDialog() == true)
+            {
+                data = File.ReadAllBytes(fileOpen.FileName);
+                ImageSerice.Source = new ImageSourceConverter()
+                   .ConvertFrom(data) as ImageSource;
+            }
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -53,27 +64,27 @@ namespace PotionBook.Pages
             }
             else
             {
-                if (currentingOne == null && currentingTwo == null && currentingThr == null && currentingFour == null)
+                if (currentingOne == null)
                 {
                     var ingredientOne = new Entities.IngredientOne
                     {
                         NameOne = TxtName.Text,
-                        ImageOne = "NULL"
+                        ImageOne = data
                     };
                     var ingredientTwo = new Entities.IngredientTwo
                     {
                         NameTwo = TxtName.Text,
-                        ImageTwo = "NULL"
+                        ImageTwo = data
                     };
                     var ingredientThr = new Entities.IngredientThr
                     {
                         NameThr = TxtName.Text,
-                        ImageThr = "NULL"
+                        ImageThr = data
                     };
                     var ingredientFour = new Entities.IngredientFour
                     {
                         NameFour = TxtName.Text,
-                        ImageFour = "NULL"
+                        ImageFour = data
                     };
 
                     App.Context.IngredientOnes.Add(ingredientOne);
@@ -87,16 +98,33 @@ namespace PotionBook.Pages
                 else
                 {
                     currentingOne.NameOne = TxtName.Text;
-                    currentingOne.ImageOne = "NULL";
+                    if (data != null)
+                        currentingOne.ImageOne = data;
 
-                    //currentingTwo.NameTwo = TxtName.Text;
-                    //currentingTwo.ImageTwo = "NULL";
+                    App.Context.SaveChanges();
 
-                    //currentingThr.NameThr = TxtName.Text;
-                    //currentingThr.ImageThr = "NULL";
+                    SqlConnection myConnection = new SqlConnection("Server = PCSQLStud01; database = 10200296; Integrated Security=True; TrustServerCertificate=True");
+                    string selectquery;
+                    if (data != null)
+                        selectquery = "Update IngredientTwo Set NameTwo = '" + TxtName.Text + "', ImageTwo = (Select ImageOne From IngredientOne Where idOne=" + currentingOne.idOne + ") Where idTwo = " + currentingOne.idOne;
+                    else selectquery = "Update IngredientTwo Set NameTwo = '" + TxtName.Text + "', ImageTwo = NULL Where idTwo = " + currentingOne.idOne;
+                    SqlDataAdapter adpt = new SqlDataAdapter(selectquery, myConnection);
+                    DataTable table = new DataTable();
+                    adpt.Fill(table);
 
-                    //currentingFour.NameFour = TxtName.Text;
-                    //currentingFour.ImageFour = "NULL";
+                    if (data != null)
+                        selectquery = "Update IngredientThr Set NameThr = '" + TxtName.Text + "', ImageThr = (Select ImageOne From IngredientOne Where idOne=" + currentingOne.idOne + ") Where idThr = " + currentingOne.idOne;
+                    else selectquery = "Update IngredientThr Set NameThr = '" + TxtName.Text + "', ImageThr = NULL Where idThr = " + currentingOne.idOne;
+                    adpt = new SqlDataAdapter(selectquery, myConnection);
+                    table = new DataTable();
+                    adpt.Fill(table);
+
+                    if (data != null)
+                        selectquery = "Update IngredientFour Set NameFour = '" + TxtName.Text + "', ImageFour = (Select ImageOne From IngredientOne Where idOne=" + currentingOne.idOne + ") Where idFour = " + currentingOne.idOne;
+                    else selectquery = "Update IngredientFour Set NameFour = '" + TxtName.Text + "', ImageFour = NULL Where idFour = " + currentingOne.idOne;
+                    adpt = new SqlDataAdapter(selectquery, myConnection);
+                    table = new DataTable();
+                    adpt.Fill(table);
 
                     App.Context.SaveChanges();
                     MessageBox.Show("Ингредиент успешно обновлен", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);

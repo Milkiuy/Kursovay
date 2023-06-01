@@ -1,6 +1,8 @@
-﻿using PotionBook.Entities;
+﻿using Microsoft.Win32;
+using PotionBook.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,7 @@ namespace PotionBook.Pages
     public partial class AddEditPotionPage : Page
     {
         private Entities.Potion currentpotion = null;
+        private byte[] data = null;
         public AddEditPotionPage()
         {
             InitializeComponent();
@@ -78,7 +81,7 @@ namespace PotionBook.Pages
                         .Select(p => p.idTwo).FirstOrDefault(),
                             IngredientThr = null,
                             IngredientFour = null,
-                            Image = "NULL"
+                            Image = data
                         };
                     }
                     else if (ComboFour.SelectedItem == null)
@@ -93,7 +96,7 @@ namespace PotionBook.Pages
                             IngredientThr = App.Context.IngredientThrs.Where(p => p.NameThr == ComboThr.SelectedItem.ToString())
                         .Select(p => p.idThr).FirstOrDefault(),
                             IngredientFour = null,
-                            Image = "NULL"
+                            Image = data
                         };
                     }
                     else
@@ -109,7 +112,7 @@ namespace PotionBook.Pages
                         .Select(p => p.idThr).FirstOrDefault(),
                             IngredientFour = App.Context.IngredientFours.Where(p => p.NameFour == ComboFour.SelectedItem.ToString())
                         .Select(p => p.idFour).FirstOrDefault(),
-                            Image = "NULL"
+                            Image = data
                         };
                     }
 
@@ -135,7 +138,8 @@ namespace PotionBook.Pages
                     else
                         currentpotion.IngredientFour = App.Context.IngredientFours.Where(p => p.NameFour == ComboFour.SelectedItem.ToString())
                             .Select(p => p.idFour).FirstOrDefault();
-                    currentpotion.Image = "NULL";
+                    if (data != null)
+                    currentpotion.Image = data;
 
                     App.Context.SaveChanges();
                     MessageBox.Show("Зелье успешно обновлено", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -167,7 +171,15 @@ namespace PotionBook.Pages
 
         private void SelectImageBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenFileDialog fileOpen = new OpenFileDialog();
+            fileOpen.Multiselect = false;
+            fileOpen.Filter = "Image | *.png; *.jpg; *.jpeg";
+            if (fileOpen.ShowDialog() == true)
+            {
+                data = File.ReadAllBytes(fileOpen.FileName);
+                 ImageSerice.Source = new ImageSourceConverter()
+                    .ConvertFrom(data) as ImageSource;
+            }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

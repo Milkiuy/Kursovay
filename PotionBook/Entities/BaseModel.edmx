@@ -11,7 +11,7 @@
           </Key>
           <Property Name="idFour" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameFour" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ImageFour" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageFour" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="IngredientOne">
           <Key>
@@ -19,7 +19,7 @@
           </Key>
           <Property Name="idOne" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameOne" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ImageOne" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageOne" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="IngredientThr">
           <Key>
@@ -27,7 +27,7 @@
           </Key>
           <Property Name="idThr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameThr" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ImageThr" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageThr" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="IngredientTwo">
           <Key>
@@ -35,7 +35,7 @@
           </Key>
           <Property Name="idTwo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameTwo" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ImageTwo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageTwo" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Potion">
           <Key>
@@ -44,10 +44,10 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IngredientOne" Type="int" Nullable="false" />
-          <Property Name="IngredientTwo" Type="int" />
+          <Property Name="IngredientTwo" Type="int" Nullable="false" />
           <Property Name="IngredientThr" Type="int" />
           <Property Name="IngredientFour" Type="int" />
-          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -115,7 +115,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Potion_IngredientTwo">
-          <End Role="IngredientTwo" Type="Self.IngredientTwo" Multiplicity="0..1" />
+          <End Role="IngredientTwo" Type="Self.IngredientTwo" Multiplicity="1" />
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientTwo">
@@ -179,7 +179,7 @@
           </Key>
           <Property Name="idFour" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameFour" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ImageFour" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageFour" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Potions" Relationship="Self.FK_Potion_IngredientFour" FromRole="IngredientFour" ToRole="Potion" />
         </EntityType>
         <EntityType Name="IngredientOne">
@@ -188,7 +188,7 @@
           </Key>
           <Property Name="idOne" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameOne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ImageOne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageOne" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Potions" Relationship="Self.FK_Potion_IngredientOne" FromRole="IngredientOne" ToRole="Potion" />
         </EntityType>
         <EntityType Name="IngredientThr">
@@ -197,7 +197,7 @@
           </Key>
           <Property Name="idThr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameThr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ImageThr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageThr" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Potions" Relationship="Self.FK_Potion_IngredientThr" FromRole="IngredientThr" ToRole="Potion" />
         </EntityType>
         <EntityType Name="IngredientTwo">
@@ -206,7 +206,7 @@
           </Key>
           <Property Name="idTwo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ImageTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageTwo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Potions" Relationship="Self.FK_Potion_IngredientTwo" FromRole="IngredientTwo" ToRole="Potion" />
         </EntityType>
         <EntityType Name="Potion">
@@ -216,10 +216,10 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IngredientOne" Type="Int32" Nullable="false" />
-          <Property Name="IngredientTwo" Type="Int32" />
+          <Property Name="IngredientTwo" Type="Int32" Nullable="false" />
           <Property Name="IngredientThr" Type="Int32" />
           <Property Name="IngredientFour" Type="Int32" />
-          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="IngredientFour1" Relationship="Self.FK_Potion_IngredientFour" FromRole="Potion" ToRole="IngredientFour" />
           <NavigationProperty Name="IngredientOne1" Relationship="Self.FK_Potion_IngredientOne" FromRole="Potion" ToRole="IngredientOne" />
           <NavigationProperty Name="IngredientThr1" Relationship="Self.FK_Potion_IngredientThr" FromRole="Potion" ToRole="IngredientThr" />
@@ -293,7 +293,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Potion_IngredientTwo">
-          <End Role="IngredientTwo" Type="Self.IngredientTwo" Multiplicity="0..1" />
+          <End Role="IngredientTwo" Type="Self.IngredientTwo" Multiplicity="1" />
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientTwo">

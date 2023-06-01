@@ -22,22 +22,7 @@ namespace PotionBook.Entities
     
         public int idOne { get; set; }
         public string NameOne { get; set; }
-        public string ImageOne { get; set; }
-
-        public string CorrectPhoto
-        {
-            get
-            {
-                if (String.IsNullOrEmpty(ImageOne) || String.IsNullOrWhiteSpace(ImageOne))
-                {
-                    return "/Resources/icon.png";
-                }
-                else
-                {
-                    return "/Resources/" + ImageOne;
-                }
-            }
-        }
+        public byte[] ImageOne { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Potion> Potions { get; set; }

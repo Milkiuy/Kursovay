@@ -25,7 +25,15 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="70"/>
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding CorrectPhoto}" Style="{StaticResource ProductImage}"/>
+                            <Image Style="{StaticResource ProductImage}">
+                                <Image.Source>
+                                    <Binding Path="ImageOne">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>bottle.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
                             <StackPanel Grid.Column="1">
                                 <TextBlock Style="{StaticResource BlockDescription}" Width="auto"
                                            Text="{Binding NameOne}"/>

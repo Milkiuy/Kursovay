@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,9 +46,23 @@ namespace PotionBook.Pages
                     "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 App.Context.IngredientOnes.Remove(currentIngredients);
-                //App.Context.IngredientTwoes.Remove(currentIngredients);
-                //App.Context.IngredientThrs.Remove(currentIngredients);
-                //App.Context.IngredientFours.Remove(currentIngredients);
+
+                SqlConnection myConnection = new SqlConnection("Server = PCSQLStud01; database = 10200296; Integrated Security=True; TrustServerCertificate=True");
+                string selectquery = "Delete From IngredientTwo Where idTwo = " + currentIngredients.idOne;
+                SqlDataAdapter adpt = new SqlDataAdapter(selectquery, myConnection);
+                DataTable table = new DataTable();
+                adpt.Fill(table);
+
+                selectquery = "Delete From IngredientThr Where idThr = " + currentIngredients.idOne;
+                adpt = new SqlDataAdapter(selectquery, myConnection);
+                table = new DataTable();
+                adpt.Fill(table);
+
+                selectquery = "Delete From IngredientFour Where idFour = " + currentIngredients.idOne;
+                adpt = new SqlDataAdapter(selectquery, myConnection);
+                table = new DataTable();
+                adpt.Fill(table);
+                
                 App.Context.SaveChanges();
                 UpdateIngredient();
             }

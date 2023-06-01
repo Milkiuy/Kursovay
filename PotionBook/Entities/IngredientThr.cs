@@ -22,7 +22,7 @@ namespace PotionBook.Entities
     
         public int idThr { get; set; }
         public string NameThr { get; set; }
-        public string ImageThr { get; set; }
+        public byte[] ImageThr { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Potion> Potions { get; set; }

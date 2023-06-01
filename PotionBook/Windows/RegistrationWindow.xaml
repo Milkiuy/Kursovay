@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PotionBook.Windows"
         mc:Ignorable="d"
-        Title="Электронный учебник" Height="450" Width="500">
+        Title="Электронный учебник" Height="500" Width="500"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
