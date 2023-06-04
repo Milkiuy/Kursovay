@@ -1,0 +1,86 @@
+﻿<Page x:Class="PotionBook.Pages.PracticePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PotionBook.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Практика" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas AllowDrop="True" DragLeave="Arbuz_DragLeave"  Background="Transparent" Name="Arbuz" Grid.Column="0" Grid.Row="0">
+            <Image x:Name="ArbuzImg" MouseMove="ArbuzImg_MouseMove" Source="\Resources\arbuz.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Glaz_DragLeave"  Background="Transparent" Name="Glaz" Grid.Column="0" Grid.Row="1">
+            <Image x:Name="GlazImg" MouseMove="GlazImg_MouseMove" Source="\Resources\glaz.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Iglo_DragLeave"  Background="Transparent" Name="Iglo" Grid.Column="0" Grid.Row="2">
+            <Image x:Name="IgloImg" MouseMove="IgloImg_MouseMove" Source="\Resources\iglo.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Lapka_DragLeave"  Background="Transparent" Name="Lapka" Grid.Column="0" Grid.Row="3">
+            <Image x:Name="LapkaImg" MouseMove="LapkaImg_MouseMove" Source="\Resources\lapka.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Marin_DragLeave"  Background="Transparent" Name="Marin" Grid.Column="1" Grid.Row="4">
+            <Image x:Name="MarinImg" MouseMove="MarinImg_MouseMove" Source="\Resources\marin.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Membrana_DragLeave"  Background="Transparent" Name="Membrana" Grid.Column="2" Grid.Row="4">
+            <Image x:Name="MembranaImg" MouseMove="MembranaImg_MouseMove" Source="\Resources\membrana.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Morkov_DragLeave"  Background="Transparent" Name="Morkov" Grid.Column="3" Grid.Row="4">
+            <Image x:Name="MorkovImg" MouseMove="MorkovImg_MouseMove" Source="\Resources\morkov.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Narost_DragLeave"  Background="Transparent" Name="Narost" Grid.Column="4" Grid.Row="4">
+            <Image x:Name="NarostImg" MouseMove="NarostImg_MouseMove" Source="\Resources\narost.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Pansir_DragLeave"  Background="Transparent" Name="Pansir" Grid.Column="5" Grid.Row="4">
+            <Image x:Name="PansirImg" MouseMove="PansirImg_MouseMove" Source="\Resources\pansir.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Poroshok_DragLeave"  Background="Transparent" Name="Poroshok" Grid.Column="6" Grid.Row="4">
+            <Image x:Name="PoroshokImg" MouseMove="PoroshokImg_MouseMove" Source="\Resources\poroshok.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Pyl_DragLeave"  Background="Transparent" Name="Pyl" Grid.Column="7" Grid.Row="4">
+            <Image x:Name="PylImg" MouseMove="PylImg_MouseMove" Source="\Resources\pyl.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Redstone_DragLeave"  Background="Transparent" Name="Redstone" Grid.Column="8" Grid.Row="3">
+            <Image x:Name="RedstoneImg" MouseMove="RedstoneImg_MouseMove" Source="\Resources\redstone.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Sahar_DragLeave"  Background="Transparent" Name="Sahar" Grid.Column="8" Grid.Row="2">
+            <Image x:Name="SaharImg" MouseMove="SaharImg_MouseMove" Source="\Resources\sahar.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Sgustok_DragLeave"  Background="Transparent" Name="Sgustok" Grid.Column="8" Grid.Row="1">
+            <Image x:Name="SgustokImg" MouseMove="SgustokImg_MouseMove" Source="\Resources\sgustok.png" Height="80"/>
+        </Canvas>
+        <Canvas AllowDrop="True" DragLeave="Sleza_DragLeave" Background="Transparent" Name="Sleza" Grid.Column="8" Grid.Row="0">
+            <Image x:Name="SlezaImg" MouseMove="SlezaImg_MouseMove" IsHitTestVisible="{Binding ElementName=root, Path=IsChildeVisible}" Source="\Resources\sleza.png" Height="80"/>
+        </Canvas>
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Style="{StaticResource BlockDescription}" HorizontalAlignment="Center" Width="auto" Text="Задание"/>
+        <TextBlock x:Name="TxtAnswer" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource BlockDescription}" Width="auto" Height="auto" Margin="0"/>
+        <Grid Grid.ColumnSpan="9" Grid.Row="6" Background="{StaticResource ColorSecondary}"/>
+        <Canvas AllowDrop="True" DragOver="MainCanvas_DragOver" Background="Transparent" x:Name="MainCanvas" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2">
+            <Image Source="\Resources\water.png" Height="160" Width="177"></Image>
+        </Canvas>
+        <Button Grid.ColumnSpan="3" HorizontalAlignment="Left" Grid.Row="6" Content="Назад" Name="BackBtn" Click="BackBtn_Click"/>
+        <Button Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Grid.Row="6" Content="Выйти" Name="LogOut" Click="LogOut_Click"/>
+        <Button Grid.Column="6" Grid.ColumnSpan="3" HorizontalAlignment="Right" Grid.Row="6" Content="Проверка" Name="CheckBtn" Click="CheckBtn_Click"/>
+    </Grid>
+</Page>

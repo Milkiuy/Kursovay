@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,7 @@ namespace PotionBook.Pages
     /// </summary>
     public partial class PotionPage : Page
     {
+        Regex name = new Regex(@"^[А-ЯЁ][а-яё]+$");
         public PotionPage()
         {
             InitializeComponent();

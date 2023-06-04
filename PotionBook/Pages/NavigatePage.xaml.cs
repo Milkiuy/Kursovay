@@ -34,7 +34,10 @@ namespace PotionBook.Pages
 
         private void PracticBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            PotionWindow potion = new PotionWindow();
+            potion.FrameMain.Navigate(new PracticePage());
+            potion.Show();
+            Window.GetWindow(this).Close();
         }
 
         private void TestBtn_Click(object sender, RoutedEventArgs e)
