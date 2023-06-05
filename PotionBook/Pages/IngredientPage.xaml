@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="IngredientPage" Loaded="Page_Loaded">
+      Title="Игредиенты" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>

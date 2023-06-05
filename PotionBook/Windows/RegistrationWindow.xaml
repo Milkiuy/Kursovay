@@ -14,7 +14,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="{StaticResource ColorSecondary}"/>
-        <Grid Grid.Row="2" Background="{StaticResource ColorSecondary}"/>
+        <TextBlock Style="{StaticResource BlockHeader}" Text="{Binding ElementName=FrameMain, Path=Content.Title}"/>
         <Image Source="/Resources/icon.png" HorizontalAlignment="Left"></Image>
         <Frame Name="FrameMain" NavigationUIVisibility="Hidden" Grid.Row="1"/>
         <Button Grid.Row="2" x:Name="BtnBack" Content="Назад" Click="BtnBack_Click"/>

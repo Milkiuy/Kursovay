@@ -6,13 +6,10 @@
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="200" d:DesignWidth="400"
-      Title="LoginPage">
+      Title="Авторизация">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel>
-                <TextBlock Style="{StaticResource BlockHeader}" Text="Авторизация"/>
-            </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"> 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Style="{StaticResource BlockCommon}" Text="Логин:"></TextBlock>
                 <TextBox Name="TxtLogin"></TextBox>

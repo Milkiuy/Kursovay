@@ -18,9 +18,23 @@ namespace PotionBook.Entities
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
+        public string FIO
+        {
+            get
+            {
+                return Surname + " " + Name;
+            }
+        }
         public string Login { get; set; }
         public string Password { get; set; }
         public int RoleID { get; set; }
+        public string NameRole
+        {
+            get
+            {
+                return Role.Name.ToString();
+            }
+        }
     
         public virtual Role Role { get; set; }
     }

@@ -17,9 +17,51 @@ namespace PotionBook.Entities
         public int id { get; set; }
         public string Name { get; set; }
         public int IngredientOne { get; set; }
+        public string NameIngredientOne
+        {
+            get
+            {
+                return IngredientOne1.NameOne.ToString();
+            }
+        }
         public int IngredientTwo { get; set; }
+        public string NameIngredientTwo
+        {
+            get
+            {
+                return IngredientTwo1.NameTwo.ToString();
+            }
+        }
         public Nullable<int> IngredientThr { get; set; }
+        public string NameIngredientThr
+        {
+            get
+            {
+                if (IngredientThr == null)
+                {
+                    return "";
+                }
+                else
+                {
+                    return IngredientThr1.NameThr.ToString();
+                }
+            }
+        }
         public Nullable<int> IngredientFour { get; set; }
+        public string NameIngredientFour
+        {
+            get
+            {
+                if (IngredientFour == null)
+                {
+                    return "";
+                }
+                else
+                {
+                    return IngredientFour1.NameFour.ToString();
+                }
+            }
+        }
         public byte[] Image { get; set; }
     
         public virtual IngredientFour IngredientFour1 { get; set; }

@@ -39,7 +39,6 @@ namespace PotionBook.Pages
         {
             PotionWindow potion = new PotionWindow();
             potion.FrameMain.Navigate(new UserPage());
-            potion.Title = "Зелья";
             potion.Show();
             Window.GetWindow(this).Close();
         }
@@ -48,7 +47,6 @@ namespace PotionBook.Pages
         {
             PotionWindow potion = new PotionWindow();
             potion.FrameMain.Navigate(new IngredientPage());
-            potion.Title = "Ингредиенты";
             potion.Show();
             Window.GetWindow(this).Close();
         }
@@ -57,7 +55,6 @@ namespace PotionBook.Pages
         {
             PotionWindow potion = new PotionWindow();
             potion.FrameMain.Navigate(new PotionPage());
-            potion.Title = "Пользователи";
             potion.Show();
             Window.GetWindow(this).Close();
         }

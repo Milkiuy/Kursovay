@@ -13,7 +13,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="{StaticResource ColorSecondary}" Grid.ColumnSpan="2"/>
-        <TextBlock Style="{StaticResource BlockCommon}" Margin="290,0,0,0" Name="UserName" HorizontalAlignment="Left" Width="200" Grid.ColumnSpan="2"></TextBlock>
+        <TextBlock Style="{StaticResource BlockCommon}" Name="UserName" HorizontalAlignment="Right" Width="150" Grid.ColumnSpan="2"></TextBlock>
+        <TextBlock Style="{StaticResource BlockHeader}" Text="{Binding ElementName=FrameMain, Path=Content.Title}"/>
         <Image Source="/Resources/icon.png" HorizontalAlignment="Left"></Image>
         <Frame Name="FrameMain" NavigationUIVisibility="Hidden" Grid.Row="1" ContentRendered="FrameMain_ContentRendered" Grid.ColumnSpan="2"/>
     </Grid>

@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="200" d:DesignWidth="200"
-      Title="NavigateForAdminPage">
+      Title="Навигация">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="Зелья" x:Name="PotionBtn" Click="PotionBtn_Click"/>
             <Button Content="Ингредиенты" x:Name="IngredientsBtn" Click="IngredientsBtn_Click"/>
             <Button Content="Пользователи" x:Name="UserBtn" Click="UserBtn_Click"/>
