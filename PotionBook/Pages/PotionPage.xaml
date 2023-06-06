@@ -58,5 +58,6 @@
         <Button HorizontalAlignment="Left" Grid.Row="1" Content="Назад" Name="BackBtn" Click="BackBtn_Click"/>
         <Button HorizontalAlignment="Right" Grid.Row="1"
                 Content="Добавить зелье" Name="AddPotionBtn" Click="AddPotionBtn_Click"/>
+        <Button HorizontalAlignment="Center" Grid.Row="1" Content="Выйти" Name="LogOut" Click="LogOut_Click"/>
     </Grid>
 </Page>

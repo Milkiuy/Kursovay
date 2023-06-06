@@ -62,22 +62,22 @@
             <Image x:Name="PylImg" MouseMove="PylImg_MouseMove" Source="\Resources\pyl.png" Height="80"/>
         </Canvas>
         <Canvas AllowDrop="True" DragLeave="Redstone_DragLeave"  Background="Transparent" Name="Redstone" Grid.Column="8" Grid.Row="3">
-            <Image x:Name="RedstoneImg" MouseMove="RedstoneImg_MouseMove" Source="\Resources\redstone.png" Height="80"/>
+            <Image x:Name="RedstoneImg" MouseMove="RedstoneImg_MouseMove" Source="/Resources\redstone.png" Height="80"/>
         </Canvas>
         <Canvas AllowDrop="True" DragLeave="Sahar_DragLeave"  Background="Transparent" Name="Sahar" Grid.Column="8" Grid.Row="2">
-            <Image x:Name="SaharImg" MouseMove="SaharImg_MouseMove" Source="\Resources\sahar.png" Height="80"/>
+            <Image x:Name="SaharImg" MouseMove="SaharImg_MouseMove" Source="/Resources\sahar.png" Height="80"/>
         </Canvas>
         <Canvas AllowDrop="True" DragLeave="Sgustok_DragLeave"  Background="Transparent" Name="Sgustok" Grid.Column="8" Grid.Row="1">
-            <Image x:Name="SgustokImg" MouseMove="SgustokImg_MouseMove" Source="\Resources\sgustok.png" Height="80"/>
+            <Image x:Name="SgustokImg" MouseMove="SgustokImg_MouseMove" Source="/Resources\sgustok.png" Height="80"/>
         </Canvas>
         <Canvas AllowDrop="True" DragLeave="Sleza_DragLeave" Background="Transparent" Name="Sleza" Grid.Column="8" Grid.Row="0">
-            <Image x:Name="SlezaImg" MouseMove="SlezaImg_MouseMove" IsHitTestVisible="{Binding ElementName=root, Path=IsChildeVisible}" Source="\Resources\sleza.png" Height="80"/>
+            <Image x:Name="SlezaImg" MouseMove="SlezaImg_MouseMove" IsHitTestVisible="{Binding ElementName=root, Path=IsChildeVisible}" Source="/Resources\sleza.png" Height="80"/>
         </Canvas>
         <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Style="{StaticResource BlockDescription}" HorizontalAlignment="Center" Width="auto" Text="Задание"/>
         <TextBlock x:Name="TxtAnswer" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource BlockDescription}" Width="auto" Height="auto" Margin="0"/>
         <Grid Grid.ColumnSpan="9" Grid.Row="6" Background="{StaticResource ColorSecondary}"/>
         <Canvas AllowDrop="True" DragOver="MainCanvas_DragOver" Background="Transparent" x:Name="MainCanvas" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2">
-            <Image Source="\Resources\water.png" Height="160" Width="177"></Image>
+            <Image Source="/Resources\water.png" Height="160" Width="177"></Image>
         </Canvas>
         <Button Grid.ColumnSpan="3" HorizontalAlignment="Left" Grid.Row="6" Content="Назад" Name="BackBtn" Click="BackBtn_Click"/>
         <Button Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Grid.Row="6" Content="Выйти" Name="LogOut" Click="LogOut_Click"/>

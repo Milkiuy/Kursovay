@@ -41,7 +41,11 @@ namespace PotionBook.Pages
             if (currentpotion.IngredientThr != null)
                 ComboThr.SelectedIndex = (int)currentpotion.IngredientThr;
             if (currentpotion.IngredientFour != null)
-                ComboFour.SelectedIndex = (int)currentpotion.IngredientFour;            
+                ComboFour.SelectedIndex = (int)currentpotion.IngredientFour;
+            if (currentpotion.Image != null)
+                ImageSerice.Source = new ImageSourceConverter()
+                    .ConvertFrom(currentpotion.Image) as ImageSource;
+
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

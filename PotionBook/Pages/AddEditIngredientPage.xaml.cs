@@ -27,10 +27,10 @@ namespace PotionBook.Pages
     {
         private Entities.IngredientOne currentingOne = null;
         private byte[] data = null;
-        string path = null;
         public AddEditIngredientPage()
         {
             InitializeComponent();
+            
         }
 
         public AddEditIngredientPage(Entities.IngredientOne engredientOne)
@@ -39,6 +39,9 @@ namespace PotionBook.Pages
             Title = "Редактирование ингредиентов";
             currentingOne = engredientOne;
             TxtName.Text = currentingOne.NameOne;
+            if (currentingOne.ImageOne != null)
+                ImageSerice.Source = new ImageSourceConverter()
+                    .ConvertFrom(currentingOne.ImageOne) as ImageSource;
         }
 
         private void SelectImageBtn_Click(object sender, RoutedEventArgs e)

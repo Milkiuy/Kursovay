@@ -42,6 +42,7 @@
         </ListView>
         <Button HorizontalAlignment="Left" Grid.Row="1" Content="Назад" Name="BackBtn" Click="BackBtn_Click"/>
         <Button HorizontalAlignment="Right" Grid.Row="1"
-                Content="Добавить пользователя" Name="AddUserBtn" Click="AddUserBtn_Click"/>
+                Content="Добавить пользователя" Width="190" Name="AddUserBtn" Click="AddUserBtn_Click"/>
+        <Button HorizontalAlignment="Center" Grid.Row="1" Content="Выйти" Name="LogOut" Click="LogOut_Click"/>
     </Grid>
 </Page>

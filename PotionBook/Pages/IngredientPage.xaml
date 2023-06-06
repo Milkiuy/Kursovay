@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Игредиенты" Loaded="Page_Loaded">
+      Title="Ингредиенты" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -50,5 +50,6 @@
         <Button HorizontalAlignment="Left" Grid.Row="1" Content="Назад" Name="BackBtn" Click="BackBtn_Click"/>
         <Button HorizontalAlignment="Right" Grid.Row="1"
                 Content="Добавить ингредиент" Name="AddIngredientBtn" Click="AddIngredientBtn_Click"/>
+        <Button HorizontalAlignment="Center" Grid.Row="1" Content="Выйти" Name="LogOut" Click="LogOut_Click"/>
     </Grid>
 </Page>
