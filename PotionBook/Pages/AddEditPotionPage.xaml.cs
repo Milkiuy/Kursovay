@@ -36,12 +36,12 @@ namespace PotionBook.Pages
             Title = "Редактирование зелий";
             currentpotion = potion;
             TxtName.Text = currentpotion.Name;
-            ComboOne.SelectedIndex = currentpotion.IngredientOne;
-            ComboTwo.SelectedIndex = currentpotion.IngredientTwo;
+            ComboOne.SelectedIndex = currentpotion.IngredientOne -1;
+            ComboTwo.SelectedIndex = currentpotion.IngredientTwo - 1;
             if (currentpotion.IngredientThr != null)
-                ComboThr.SelectedIndex = (int)currentpotion.IngredientThr;
+                ComboThr.SelectedIndex = (int)currentpotion.IngredientThr - 1;
             if (currentpotion.IngredientFour != null)
-                ComboFour.SelectedIndex = (int)currentpotion.IngredientFour;
+                ComboFour.SelectedIndex = (int)currentpotion.IngredientFour - 1; 
             if (currentpotion.Image != null)
                 ImageSerice.Source = new ImageSourceConverter()
                     .ConvertFrom(currentpotion.Image) as ImageSource;

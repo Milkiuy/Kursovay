@@ -195,8 +195,9 @@ C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\AddEditUserPa
 C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\IngredientPage.baml
 C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\NavigateForAdminPage.baml
 C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\Pages\UserPage.baml
-C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.csprojAssemblyReference.cache
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\Pages\PracticePage.g.cs
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\Pages\TestsPage.g.cs
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\Pages\PracticePage.baml
 C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\Pages\TestsPage.baml
+C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.csproj.AssemblyReference.cache
+C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\PotionBook.csproj.SuggestedBindingRedirects.cache
