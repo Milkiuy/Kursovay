@@ -301,6 +301,8 @@
       <DependentUpon>BaseModel.edmx</DependentUpon>
       <LastGenOutput>BaseModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\stremitelnosti.png" />
+    <Resource Include="Resources\zamedlenie.png" />
     <Resource Include="Resources\water.png" />
     <Resource Include="Resources\stoyka.png" />
     <Resource Include="Pages\icon.png" />

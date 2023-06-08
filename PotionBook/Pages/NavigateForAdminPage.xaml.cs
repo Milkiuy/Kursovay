@@ -64,7 +64,10 @@ namespace PotionBook.Pages
             if (MessageBox.Show($"Вы уверены, что хотите выйти?",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
-                NavigationService.Navigate(new LoginPage());
+                App.CurrentUser = null;
+                MainWindow main = new MainWindow();
+                main.Show();
+                Window.GetWindow(this).Close();
             }
         }
     }

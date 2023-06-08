@@ -95,6 +95,7 @@ namespace PotionBook.Pages
             if (MessageBox.Show($"Вы уверены, что хотите выйти?",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
+                App.CurrentUser = null;
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 Window.GetWindow(this).Close();

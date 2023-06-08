@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PotionBook.Windows"
         mc:Ignorable="d" Loaded="Window_Loaded"
-        Title="Электронный учебник" Height="650" Width="850"
+        Title="Электронный учебник" Height="550" Width="850"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="{StaticResource ColorSecondary}"></Grid>
         <Image Source="/Resources/icon.png" Width="100" HorizontalAlignment="Left"></Image>
-        <TextBlock Style="{StaticResource BlockCommon}" Margin="10" Name="UserName" HorizontalAlignment="Right" Width="200"></TextBlock>
+        <TextBlock Style="{StaticResource BlockCommon}" Foreground="White" Margin="10" Name="UserName" HorizontalAlignment="Right" Width="200"></TextBlock>
         <TextBlock Style="{StaticResource BlockHeader}" Text="{Binding ElementName=FrameMain, Path=Content.Title}"/>
         <Frame Name="FrameMain" NavigationUIVisibility="Hidden" Grid.Row="1" ContentRendered="FrameMain_ContentRendered"/>
     </Grid>

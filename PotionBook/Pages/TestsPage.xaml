@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PotionBook.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="Тест" >
 
     <Grid>
@@ -20,58 +20,54 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Border BorderBrush="{StaticResource ColorAccent}" BorderThickness="2">
-        <StackPanel x:Name="JumpPanel">
-            <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="1. Сие зелие даётъ свойство поднятися на возвышене в половину раза выше."/>
-            <RadioButton GroupName="Jump" Content="Зелье скорости"/>
-            <RadioButton GroupName="Jump" Content="Зелье исцеления"/>
-            <RadioButton GroupName="Jump" Content="Зелье прыгучести"/>
-            <RadioButton GroupName="Jump" Content="Зелье силы"/>
-        </StackPanel>
+            <StackPanel x:Name="FallPanel">
+                <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="1. С чего сварить зелье медленного падения?"/>
+                <RadioButton Checked="RadioButton_Checked" GroupName="Fall" Content="Слеза гаста"/>
+                <RadioButton Checked="RadioButton_Checked" GroupName="Fall" Content="Сгусток магмы"/>
+                <RadioButton Checked="AnswerFall_Checked" Name="AnswerFall" GroupName="Fall" Content="Мембрана фантома"/>
+            </StackPanel>
         </Border>
         <Border Grid.Column="1" BorderBrush="{StaticResource ColorAccent}" BorderThickness="2">
-            <StackPanel x:Name="HealthPanel">
-            <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="2. Этот взвар из червоной пыли, отвара воскресения и огненной взвеси можетъ вернути ваше здоровъя в разе скоре."/>
-            <RadioButton GroupName="Health" Content="Усиленное зелье регенерации"/>
-            <RadioButton GroupName="Health" Content="Взрывное зелье регенерации"/>
-            <RadioButton GroupName="Health" Content="Зелье регенерации II"/>
-            <RadioButton GroupName="Health" Content="Усиленное зелье силы"/>
-        </StackPanel>
+            <StackPanel x:Name="SpeedPanel">
+                <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="2. С чего создать Зелье стремительности?"/>
+                <RadioButton Checked="RadioButton_Checked_1" GroupName="Speed" Content="Огненный порошок"/>
+                <RadioButton Checked="AnswerSpeed_Checked" Name="AnswerSpeed" GroupName="Speed" Content="Сахар"/>
+                <RadioButton Checked="RadioButton_Checked_1" GroupName="Speed" Content="Золотая морковь"/>
+            </StackPanel>
         </Border>
         <Border Grid.Row="1" BorderBrush="{StaticResource ColorAccent}" BorderThickness="2">
-        <StackPanel x:Name="PowerPanel">
-            <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="3. Сие зелие помогает врага полонить и дланью и мечом."/>
-            <RadioButton GroupName="Power" Content="Зелье медленного падения"/>
-            <RadioButton GroupName="Power" Content="Зелье ускорения"/>
-            <RadioButton GroupName="Power" Content="Зелье исцеления"/>
-            <RadioButton GroupName="Power" Content="Зелье силы"/>
-        </StackPanel>
+            <StackPanel x:Name="VisionPanel">
+                <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="3. С чего можно создать Зелье ночного зрения?"/>
+                <RadioButton Checked="RadioButton_Checked_2" GroupName="Vision" Content="Сверкающий ломтик арбуза"/>
+                <RadioButton Checked="RadioButton_Checked_2" GroupName="Vision" Content="Сгусток магмы"/>
+                <RadioButton Checked="AnswerVision_Checked" Name="AnswerVision" GroupName="Vision" Content="Золотая морковь"/>
+            </StackPanel>
         </Border>
         <Border Grid.Column="1" Grid.Row="1" BorderBrush="{StaticResource ColorAccent}" BorderThickness="2">
-        <StackPanel x:Name="HarmPanel">
-            <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="4. Этот взвар из червоной пыли, отвара воскресения и огненной взвеси можетъ вернути ваше здоровъя в разе скоре."/>
-            <RadioButton GroupName="Harm" Content="Зелье урона"/>
-            <RadioButton GroupName="Harm" Content="Огненный порошок"/>
-            <RadioButton GroupName="Harm" Content="Зелье лечения"/>
-            <RadioButton GroupName="Harm" Content="Зелье отравления"/>
-        </StackPanel>
+            <StackPanel x:Name="RegenerationPanel">
+                <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="4. С чего создать Зелье регенерации?"/>
+                <RadioButton Checked="AnswerRegeneration_Checked" Name="AnswerRegeneration" GroupName="Regeneration" Content="Слеза гаста"/>
+                <RadioButton Checked="RadioButton_Checked_3" GroupName="Regeneration" Content="Сверкающий Арбузов"/>
+                <RadioButton Checked="RadioButton_Checked_3" GroupName="Regeneration" Content="Кроличья лапа"/>
+            </StackPanel>
         </Border>
         <Border Grid.Row="2" BorderBrush="{StaticResource ColorAccent}" BorderThickness="2">
             <StackPanel  x:Name="InvisiblyPanel">
-            <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="5. Сие зелие владеет силою исчезания и на 3 минуты дает быстро скрытися от очей ворога твоего."/>
-            <RadioButton GroupName="Invisibly" Content="Зелье невидимости"/>
-            <RadioButton GroupName="Invisibly" Content="Усиленное зелье невидимости"/>
-            <RadioButton GroupName="Invisibly" Content="Взрывное зелье невидимости"/>
-            <RadioButton GroupName="Invisibly" Content="Зелье скорости"/>
-        </StackPanel>
+                <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="5. Из какого зелья можно сделать зелье вреда?"/>
+                <RadioButton Checked="AnswerHarmOne_Checked" Name="AnswerHarmOne" Content="Зелье исцеление и Маринованный паучий глаз"/>
+                <RadioButton Checked="RadioButton_Checked_4" Content="Зелье падения и Маринованный паучий глаз"/>
+                <RadioButton Checked="RadioButton_Checked_4" Content="Зелье слабости и Маринованный паучий глаз"/>
+                <RadioButton Checked="RadioButton_Checked_4" Content="Зелье силы и Маринованный паучий глаз"/>
+            </StackPanel>
         </Border>
         <Border Grid.Column="1" Grid.Row="2" BorderBrush="{StaticResource ColorAccent}" BorderThickness="2">
-        <StackPanel x:Name="PotionPanel">
-            <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="6. Для создания сего зелия вам потребуется пластина фантома, грубый элексир и огненная взвесь."/>
-            <RadioButton GroupName="Potion" Content="Зелье левитации"/>
-            <RadioButton GroupName="Potion" Content="Зелье огнестойкости"/>
-            <RadioButton GroupName="Potion" Content="Зелье медленного падения"/>
-            <RadioButton GroupName="Potion" Content="Зелье ночного зрения"/>
-        </StackPanel>
+            <StackPanel x:Name="DustPanel">
+                <TextBlock Margin="0" Width="390" Style="{StaticResource BlockDescription}" Text="6. К каким зельям нельзя добавить Светопыль?"/>
+                <RadioButton Checked="AnswerDust_Checked" Name="AnswerDust" Content="Зелье медленного падения"/>
+                <RadioButton Checked="RadioButton_Checked_5" Content="Зелье исцеления"/>
+                <RadioButton Checked="RadioButton_Checked_5" Content="Зелье черепашьей мощи"/>
+                <RadioButton Checked="RadioButton_Checked_5" Content="Зелье стремительности"/>
+            </StackPanel>
         </Border>
         <Grid Grid.ColumnSpan="2" Grid.Row="3" Background="{StaticResource ColorSecondary}"/>
         <Button HorizontalAlignment="Left" Grid.Row="3" Content="Назад" Name="BackBtn" Click="BackBtn_Click"/>
