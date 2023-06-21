@@ -11,7 +11,7 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="Лекции" x:Name="LessonBtn" Click="LessonBtn_Click"/>
-            <Button Content="Тесты" x:Name="TestBtn" Click="TestBtn_Click"/>
+            <Button Content="Тест" x:Name="TestBtn" Click="TestBtn_Click"/>
             <Button Content="Далее" x:Name="NextBtn" Click="NextBtn_Click"/>
             <Button Content="Выйти" x:Name="LogOutBtn" Click="LogOutBtn_Click"/>
         </StackPanel>
