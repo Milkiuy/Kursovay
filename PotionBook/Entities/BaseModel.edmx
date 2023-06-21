@@ -79,7 +79,9 @@
           <Property Name="RoleID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Potion_IngredientFour">
-          <End Role="IngredientFour" Type="Self.IngredientFour" Multiplicity="0..1" />
+          <End Role="IngredientFour" Type="Self.IngredientFour" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientFour">
@@ -91,7 +93,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Potion_IngredientOne">
-          <End Role="IngredientOne" Type="Self.IngredientOne" Multiplicity="1" />
+          <End Role="IngredientOne" Type="Self.IngredientOne" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientOne">
@@ -103,7 +107,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Potion_IngredientThr">
-          <End Role="IngredientThr" Type="Self.IngredientThr" Multiplicity="0..1" />
+          <End Role="IngredientThr" Type="Self.IngredientThr" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientThr">
@@ -115,7 +121,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Potion_IngredientTwo">
-          <End Role="IngredientTwo" Type="Self.IngredientTwo" Multiplicity="1" />
+          <End Role="IngredientTwo" Type="Self.IngredientTwo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientTwo">
@@ -127,7 +135,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_Roles">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Roles">
@@ -257,7 +267,9 @@
           <NavigationProperty Name="Role" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
         </EntityType>
         <Association Name="FK_Potion_IngredientFour">
-          <End Role="IngredientFour" Type="Self.IngredientFour" Multiplicity="0..1" />
+          <End Role="IngredientFour" Type="Self.IngredientFour" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientFour">
@@ -269,7 +281,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Potion_IngredientOne">
-          <End Role="IngredientOne" Type="Self.IngredientOne" Multiplicity="1" />
+          <End Role="IngredientOne" Type="Self.IngredientOne" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientOne">
@@ -281,7 +295,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Potion_IngredientThr">
-          <End Role="IngredientThr" Type="Self.IngredientThr" Multiplicity="0..1" />
+          <End Role="IngredientThr" Type="Self.IngredientThr" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientThr">
@@ -293,7 +309,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Potion_IngredientTwo">
-          <End Role="IngredientTwo" Type="Self.IngredientTwo" Multiplicity="1" />
+          <End Role="IngredientTwo" Type="Self.IngredientTwo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Potion" Type="Self.Potion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IngredientTwo">
@@ -305,7 +323,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_Roles">
-          <End Role="Roles" Type="Self.Role" Multiplicity="1" />
+          <End Role="Roles" Type="Self.Role" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Users" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Roles">

@@ -35,7 +35,7 @@ namespace PotionBook.Entities
                 return Role.Name.ToString();
             }
         }
-    
+
         public virtual Role Role { get; set; }
     }
 }

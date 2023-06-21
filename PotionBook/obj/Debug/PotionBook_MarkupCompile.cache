@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\10200296\source\repos\Kursovay\PotionBook\obj\Debug\
+C:\Users\10200296\Source\Repos\Kursovay\PotionBook\obj\Debug\
 PotionBook
 none
 false
 DEBUG;TRACE
-C:\Users\10200296\source\repos\Kursovay\PotionBook\App.xaml
+C:\Users\10200296\Source\Repos\Kursovay\PotionBook\App.xaml
 15-1657158861
-567857000
+51878744744
 30-178970186
-22-2064786129
+22-1822539345
 Pages\AddEditIngredientPage.xaml;Pages\AddEditPotionPage.xaml;Pages\AddEditUserPage.xaml;Pages\IngredientPage.xaml;Pages\LoginPage.xaml;Pages\NavigateForAdminPage.xaml;Pages\NavigatePage.xaml;Pages\PotionPage.xaml;Pages\PracticePage.xaml;Pages\RegistrationPage.xaml;Pages\TestsPage.xaml;Pages\UserPage.xaml;Windows\MainWindow.xaml;Windows\PotionWindow.xaml;Windows\RegistrationWindow.xaml;
 
 False

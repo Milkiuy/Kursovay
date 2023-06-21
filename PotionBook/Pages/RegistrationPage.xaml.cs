@@ -68,6 +68,9 @@ namespace PotionBook.Pages
                 App.Context.Users.Add(user);
                 App.Context.SaveChanges();
                 MessageBox.Show("Вы успешно зарегистрировались", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                MainWindow main = new MainWindow();
+                main.Show();
+                Window.GetWindow(this).Close();
             }
         }
 
